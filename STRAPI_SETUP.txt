@@ -1,0 +1,89 @@
+═══════════════════════════════════════════════════════════════
+CONFIGURACIÓN RÁPIDA DE STRAPI CLOUD
+═══════════════════════════════════════════════════════════════
+
+1. CREAR CUENTA Y PROYECTO
+   ✓ Ya abrí https://cloud.strapi.io/signup
+   - Regístrate con GitHub o email
+   - Crea nuevo proyecto (Free plan)
+   - Espera 2-3 minutos a que se despliegue
+
+2. CREAR CONTENT TYPES
+   Una vez en el admin de Strapi:
+   
+   A) CREAR "PROJECT"
+      - Content-Type Builder → Create new collection type
+      - Display name: Project
+      - Agregar campos:
+        * title (Text, Short text, Required)
+        * slug (UID, Attached to: title, Required)
+        * description (Text, Long text, Required)
+        * content (Rich text)
+        * image (Media, Single, Required)
+        * gallery (Media, Multiple)
+        * tags (JSON, Required)
+        * category (Text, Short text, Required)
+        * demoUrl (Text, Short text)
+        * githubUrl (Text, Short text)
+        * featured (Boolean, Default: false)
+        * order (Number, Integer, Default: 0)
+        * technologies (JSON)
+        * client (Text, Short text)
+        * year (Number, Integer)
+      - Save
+
+   B) CREAR "BLOG"
+      - Content-Type Builder → Create new collection type
+      - Display name: Blog
+      - Agregar campos:
+        * title (Text, Short text, Required)
+        * slug (UID, Attached to: title, Required)
+        * excerpt (Text, Long text, Required)
+        * content (Rich text, Required)
+        * image (Media, Single, Required)
+        * category (Text, Short text, Required)
+        * date (Date, Date, Required)
+        * readTime (Number, Integer, Required, Default: 5)
+        * author (Text, Short text, Required)
+        * featured (Boolean, Default: false)
+        * tags (JSON)
+      - Save
+
+   C) CREAR "FEATURED ITEM"
+      - Content-Type Builder → Create new collection type
+      - Display name: Featured Item
+      - Agregar campos:
+        * title (Text, Short text, Required)
+        * description (Text, Long text, Required)
+        * image (Media, Single, Required)
+        * link (Text, Short text, Required)
+        * type (Enumeration, Values: project, blog, external, Required)
+        * order (Number, Integer, Default: 0)
+        * tags (JSON)
+      - Save
+
+3. CONFIGURAR PERMISOS PÚBLICOS
+   - Settings → Users & Permissions → Roles → Public
+   - Marcar para cada Content Type:
+     ✓ find
+     ✓ findOne
+   - Save
+
+4. ACTUALIZAR .env.local
+   - Copia la URL de tu proyecto Strapi Cloud
+   - Pega en .env.local reemplazando YOUR_PROJECT
+   - Ejemplo: NEXT_PUBLIC_STRAPI_URL=https://mi-portfolio-cms.strapiapp.com
+
+5. CREAR CONTENIDO
+   - Content Manager → Project → Create new entry
+   - Content Manager → Blog → Create new entry
+   - Content Manager → Featured Item → Create new entry (3 items)
+   - IMPORTANTE: Hacer clic en "Publish" después de guardar
+
+6. PROBAR
+   - npm run dev
+   - Visita http://localhost:3000
+
+═══════════════════════════════════════════════════════════════
+TODO LISTO! Los servicios API ya están configurados en /lib
+═══════════════════════════════════════════════════════════════
