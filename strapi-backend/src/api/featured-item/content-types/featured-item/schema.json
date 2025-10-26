@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "featured_items",
+  "info": {
+    "singularName": "featured-item",
+    "pluralName": "featured-items",
+    "displayName": "Featured Item",
+    "description": "Items destacados para la página de inicio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["project", "blog", "external"],
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "tags": {
+      "type": "json"
+    }
+  }
+}

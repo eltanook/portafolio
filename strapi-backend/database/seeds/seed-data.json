@@ -1,0 +1,61 @@
+{
+  "projects": [
+    {
+      "title": "E-Commerce Platform",
+      "slug": "ecommerce-platform",
+      "description": "Plataforma de comercio electrónico completa con pasarela de pagos y gestión de inventario",
+      "content": "# E-Commerce Platform\n\nUna plataforma completa de comercio electrónico.",
+      "tags": ["Next.js", "Stripe", "PostgreSQL"],
+      "category": "Web App",
+      "demoUrl": "https://demo.com",
+      "featured": true,
+      "order": 1,
+      "technologies": ["Next.js", "Stripe", "PostgreSQL"],
+      "year": 2024,
+      "publishedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "title": "Task Management App",
+      "slug": "task-management-app",
+      "description": "Aplicación de gestión de tareas con colaboración en tiempo real",
+      "content": "# Task Management App\n\nGestiona tus tareas eficientemente.",
+      "tags": ["React", "Firebase", "Tailwind"],
+      "category": "Web App",
+      "demoUrl": "https://demo.com",
+      "featured": true,
+      "order": 2,
+      "technologies": ["React", "Firebase", "Tailwind CSS"],
+      "year": 2024,
+      "publishedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "title": "Portfolio CMS",
+      "slug": "portfolio-cms",
+      "description": "Sistema de gestión de contenidos para portfolios creativos",
+      "content": "# Portfolio CMS\n\nCMS diseñado para creativos.",
+      "tags": ["Next.js", "Strapi", "GraphQL"],
+      "category": "CMS",
+      "demoUrl": "https://demo.com",
+      "featured": true,
+      "order": 3,
+      "technologies": ["Next.js", "Strapi", "GraphQL"],
+      "year": 2024,
+      "publishedAt": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "blogs": [
+    {
+      "title": "Cómo construir una aplicación web moderna",
+      "slug": "como-construir-aplicacion-web-moderna",
+      "excerpt": "Guía completa para desarrollar aplicaciones web modernas",
+      "content": "# Cómo construir una aplicación web moderna\n\nGuía completa...",
+      "category": "Tutorial",
+      "date": "2024-01-15",
+      "readTime": 8,
+      "author": "Tomás Nadal",
+      "featured": true,
+      "tags": ["Web Development", "Tutorial"],
+      "publishedAt": "2024-01-15T00:00:00.000Z"
+    }
+  ]
+}
