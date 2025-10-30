@@ -448,55 +448,59 @@ export default function HomePage() {
                 </div>
               </Card>
 
-              <Card className="sm:col-span-2 bg-card border-0 shadow-sm hover:shadow-md group overflow-hidden hover:scale-[1.02] transition-all duration-300">
-                <Link href={`/projects/${featuredProjects[1].slug}`} className="block h-full">
-                  <div className="relative h-full min-h-[300px]">
-                    <Image
-                      src={featuredProjects[1].image || "/placeholder.svg"}
-                      alt={featuredProjects[1].title}
-                      fill
-                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                    <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-                      <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">{featuredProjects[1].title}</h3>
-                      <p className="text-xs sm:text-sm text-white/90 mb-3 sm:mb-4">
-                        {featuredProjects[1].description}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {featuredProjects[1].tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="text-xs px-2 py-1 rounded-full bg-accent/10 text-accent font-medium backdrop-blur-sm"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+              {featuredProjects.length >= 2 && (
+                <Card className="sm:col-span-2 bg-card border-0 shadow-sm hover:shadow-md group overflow-hidden hover:scale-[1.02] transition-all duration-300">
+                  <Link href={`/projects/${featuredProjects[1].slug}`} className="block h-full">
+                    <div className="relative h-full min-h-[300px]">
+                      <Image
+                        src={featuredProjects[1].image || "/placeholder.svg"}
+                        alt={featuredProjects[1].title}
+                        fill
+                        className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                      <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
+                        <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">{featuredProjects[1].title}</h3>
+                        <p className="text-xs sm:text-sm text-white/90 mb-3 sm:mb-4">
+                          {featuredProjects[1].description}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {featuredProjects[1].tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="text-xs px-2 py-1 rounded-full bg-accent/10 text-accent font-medium backdrop-blur-sm"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </Card>
+                  </Link>
+                </Card>
+              )}
 
-              <Card className="lg:row-span-2 bg-card border-0 shadow-sm hover:shadow-md group overflow-hidden hover:scale-[1.02] transition-all duration-300">
-                <Link href={`/projects/${featuredProjects[2].slug}`} className="block h-full">
-                  <div className="relative h-full min-h-[250px]">
-                    <Image
-                      src={featuredProjects[2].image || "/placeholder.svg"}
-                      alt={featuredProjects[2].title}
-                      fill
-                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-lg sm:text-xl font-semibold text-white mb-1">{featuredProjects[2].title}</h3>
-                      <p className="text-xs sm:text-sm text-white/80">
-                        {featuredProjects[2].description}
-                      </p>
+              {featuredProjects.length >= 3 && (
+                <Card className="lg:row-span-2 bg-card border-0 shadow-sm hover:shadow-md group overflow-hidden hover:scale-[1.02] transition-all duration-300">
+                  <Link href={`/projects/${featuredProjects[2].slug}`} className="block h-full">
+                    <div className="relative h-full min-h-[250px]">
+                      <Image
+                        src={featuredProjects[2].image || "/placeholder.svg"}
+                        alt={featuredProjects[2].title}
+                        fill
+                        className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-1">{featuredProjects[2].title}</h3>
+                        <p className="text-xs sm:text-sm text-white/80">
+                          {featuredProjects[2].description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </Card>
+                  </Link>
+                </Card>
+              )}
 
                             <Card className="lg:row-span-2 bg-transparent border-2 border-border dark:border-white hover:border-accent shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group">
                 <div className="h-full flex flex-col p-4">
@@ -686,25 +690,27 @@ export default function HomePage() {
                 </div>
               </Card>
 
-              <Card className="sm:col-span-2 bg-card border-0 shadow-sm hover:shadow-md group overflow-hidden hover:scale-[1.02] transition-all duration-300">
-                <Link href={`/projects/${featuredProjects[0].slug}`} className="block h-full">
-                  <div className="relative h-full min-h-[250px]">
-                    <Image
-                      src={featuredProjects[0].image || "/placeholder.svg"}
-                      alt={featuredProjects[0].title}
-                      fill
-                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-lg sm:text-xl font-semibold text-white mb-1">{featuredProjects[0].title}</h3>
-                      <p className="text-xs sm:text-sm text-white/80">
-                        {featuredProjects[0].description}
-                      </p>
+              {featuredProjects.length >= 1 && (
+                <Card className="sm:col-span-2 bg-card border-0 shadow-sm hover:shadow-md group overflow-hidden hover:scale-[1.02] transition-all duration-300">
+                  <Link href={`/projects/${featuredProjects[0].slug}`} className="block h-full">
+                    <div className="relative h-full min-h-[250px]">
+                      <Image
+                        src={featuredProjects[0].image || "/placeholder.svg"}
+                        alt={featuredProjects[0].title}
+                        fill
+                        className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-1">{featuredProjects[0].title}</h3>
+                        <p className="text-xs sm:text-sm text-white/80">
+                          {featuredProjects[0].description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </Card>
+                  </Link>
+                </Card>
+              )}
             </div>
 
             <Card className="mt-8 sm:mt-12 lg:mt-16 bg-card border-0 shadow-sm">
