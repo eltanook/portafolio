@@ -9,87 +9,60 @@ import { ExternalLink, Search, ChevronLeft, ChevronRight, ChevronDown } from "lu
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { getStrapiMedia } from "@/lib/strapi"
 
-// Placeholder data - will be replaced with Strapi data
-const projects = [
-  {
-    id: 1,
-    slug: "ecommerce-platform",
-    title: "E-Commerce Platform",
-    description: "Plataforma de comercio electrónico completa con pasarela de pagos y gestión de inventario",
-    descriptionEn: "Complete e-commerce platform with payment gateway and inventory management",
-    image: "/modern-ecommerce-dashboard.png",
-    tags: ["Next.js", "Stripe", "PostgreSQL"],
-    category: "Web App",
-    demo: "https://demo.com",
-  },
-  {
-    id: 2,
-    slug: "task-management-app",
-    title: "Task Management App",
-    description: "Aplicación de gestión de tareas con colaboración en tiempo real",
-    descriptionEn: "Task management application with real-time collaboration",
-    image: "/task-management-interface.png",
-    tags: ["React", "Firebase", "Tailwind"],
-    category: "Web App",
-    demo: "https://demo.com",
-  },
-  {
-    id: 3,
-    slug: "portfolio-cms",
-    title: "Portfolio CMS",
-    description: "Sistema de gestión de contenidos para portfolios creativos",
-    descriptionEn: "Content management system for creative portfolios",
-    image: "/portfolio-cms-dashboard.jpg",
-    tags: ["Next.js", "Strapi", "GraphQL"],
-    category: "CMS",
-    demo: "https://demo.com",
-  },
-  {
-    id: 4,
-    slug: "analytics-dashboard",
-    title: "Analytics Dashboard",
-    description: "Dashboard de análisis con visualización de datos en tiempo real",
-    descriptionEn: "Analytics dashboard with real-time data visualization",
-    image: "/analytics-dashboard-charts.png",
-    tags: ["React", "D3.js", "Node.js"],
-    category: "Dashboard",
-    demo: "https://demo.com",
-  },
-  {
-    id: 5,
-    slug: "social-media-app",
-    title: "Social Media App",
-    description: "Red social con mensajería instantánea y compartición de contenido",
-    descriptionEn: "Social network with instant messaging and content sharing",
-    image: "/social-media-feed-interface.jpg",
-    tags: ["Next.js", "Socket.io", "MongoDB"],
-    category: "Web App",
-    demo: "https://demo.com",
-  },
-  {
-    id: 6,
-    slug: "booking-system",
-    title: "Booking System",
-    description: "Sistema de reservas para servicios profesionales con calendario integrado",
-    descriptionEn: "Booking system for professional services with integrated calendar",
-    image: "/booking-calendar-interface.png",
-    tags: ["React", "Express", "PostgreSQL"],
-    category: "Web App",
-    demo: "https://demo.com",
-  },
-]
+interface Project {
+  id: number
+  slug: string
+  title: string
+  description: string
+  image: string
+  tags: string[]
+  category: string
+  demoUrl?: string
+}
 
 const categories = ["All", "Web App", "CMS", "Dashboard"]
-const ITEMS_PER_PAGE = 6 // 3 rows x 2 columns = 6 items per page
+const ITEMS_PER_PAGE = 6
 
 export default function ProjectsPage() {
   const { t, language } = useLanguage()
+  const [projects, setProjects] = useState<Project[]>([])
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [sortBy, setSortBy] = useState("recent")
   const [currentPage, setCurrentPage] = useState(1)
   const [isCategoryOpen, setIsCategoryOpen] = useState(false)
+
+  // Fetch projects from Strapi
+  useEffect(() => {
+    async function fetchProjects() {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?populate=*&sort[0]=order:asc`)
+        const data = await response.json()
+        
+        const projectsList: Project[] = data.data?.map((item: any) => {
+          const imageUrl = item.attributes.image?.data?.attributes?.url
+          return {
+            id: item.id,
+            slug: item.attributes.slug,
+            title: item.attributes.title,
+            description: item.attributes.description,
+            image: imageUrl ? getStrapiMedia(imageUrl) : '/placeholder.png',
+            tags: item.attributes.tags || [],
+            category: item.attributes.category || 'Web App',
+            demoUrl: item.attributes.demoUrl
+          }
+        }) || []
+        
+        setProjects(projectsList)
+      } catch (error) {
+        console.error('Error fetching projects:', error)
+      }
+    }
+    
+    fetchProjects()
+  }, [])
 
   useEffect(() => {
     document.title = language === "es" ? "Tomás Nadal - Proyectos" : "Tomás Nadal - Projects"
@@ -119,8 +92,7 @@ export default function ProjectsPage() {
     .filter((project) => {
       const matchesSearch =
         project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.descriptionEn.toLowerCase().includes(searchQuery.toLowerCase())
+        project.description.toLowerCase().includes(searchQuery.toLowerCase())
       const matchesCategory = selectedCategory === "All" || project.category === selectedCategory
       return matchesSearch && matchesCategory
     })
@@ -263,23 +235,25 @@ export default function ProjectsPage() {
                               {t("projects.viewDetails")}
                             </Link>
                           </Button>
-                          <Button
-                            asChild
-                            size="sm"
-                            className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all duration-600"
-                          >
-                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              {t("projects.visitSite")}
-                            </a>
-                          </Button>
+                          {project.demoUrl && (
+                            <Button
+                              asChild
+                              size="sm"
+                              className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all duration-600"
+                            >
+                              <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="w-4 h-4 mr-2" />
+                                {t("projects.visitSite")}
+                              </a>
+                            </Button>
+                          )}
                         </div>
                       </div>
 
                       <CardContent className="p-6 space-y-3 flex-1 flex flex-col">
                         <h3 className="text-xl font-semibold text-foreground">{project.title}</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                          {language === "es" ? project.description : project.descriptionEn}
+                          {project.description}
                         </p>
 
                         {/* Tags */}
