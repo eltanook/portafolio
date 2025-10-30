@@ -1,0 +1,49 @@
+==========================================
+VARIABLES DE ENTORNO PARA RENDER - STRAPI
+==========================================
+
+Copia cada variable en el dashboard de Render (Settings → Environment)
+
+-------------------
+Variables Básicas:
+-------------------
+
+NODE_ENV=production
+
+HOST=0.0.0.0
+
+PORT=10000
+
+DATABASE_CLIENT=postgres
+
+DATABASE_SSL=false
+
+APP_KEYS=xQO9Yl2TuvcYcRMgWjSlo+JRrLQfd14VyrGGLGuNpzc=,/Z+79WXHyyd7N1qag8MkuG0p/H4JoFcn6x9NMZc2PRY=,vTLxU2HUlqpGr46LoWY5XyGPRjUtO2YzU7M0TdzZRP8=,TeMyERP8M9EP4wmp/qolxrcaUDW6zTTSXPookE5LSAM=
+
+API_TOKEN_SALT=s4eaVLOGvJzeoSsbIO9FJCTDjsAKMeweE9373PwL6KI=
+
+ADMIN_JWT_SECRET=yJ0DIEd6z/RzEJEhN4u+fVYNpTn6EQLOf+ua5cnPf88=
+
+TRANSFER_TOKEN_SALT=s1ofO3Je3YXui7FWgLQ6ECA2QE56uDpUA7xauQ9KLGQ=
+
+JWT_SECRET=lY1T0U67QvY4xhCHjmI9iexAffxFUaolW3qMSfFJKvI=
+
+-------------------
+Base de Datos:
+-------------------
+
+IMPORTANTE: En lugar de agregar estas manualmente, en el dashboard de Render:
+1. Ve a la sección "Environment"
+2. Click en "Add from Database"
+3. Selecciona "strapi-db"
+4. Esto agregará automáticamente la variable DATABASE_URL
+
+Si prefieres agregarla manualmente:
+DATABASE_URL=postgresql://strapi_user:3RSdTCVBq62RjRLbHBwMIl2tmCSdZgtw@dpg-d41g15vgi27c739gqosg-a/strapi_production_rabq
+
+==========================================
+TOTAL: 11 variables de entorno
+==========================================
+
+NOTA: Si necesitas regenerar los secrets, ejecuta:
+.\generate-secrets.ps1
