@@ -16,37 +16,16 @@ import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa"
 import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
+import { getStrapiMedia } from "@/lib/strapi"
 
-// Featured projects for homepage
-const featuredProjects = [
-  {
-    id: 1,
-    slug: "ecommerce-platform",
-    title: "E-Commerce Platform",
-    description: "Plataforma completa con Stripe",
-    descriptionEn: "Complete platform with Stripe",
-    image: "/modern-ecommerce-dashboard.png",
-    tags: ["Next.js", "Stripe"],
-  },
-  {
-    id: 2,
-    slug: "task-management-app",
-    title: "Task Management",
-    description: "Colaboración en tiempo real",
-    descriptionEn: "Real-time collaboration",
-    image: "/task-management-interface.png",
-    tags: ["React", "Firebase"],
-  },
-  {
-    id: 3,
-    slug: "analytics-dashboard",
-    title: "Analytics Dashboard",
-    description: "Visualización de datos",
-    descriptionEn: "Data visualization",
-    image: "/analytics-dashboard-charts.png",
-    tags: ["React", "D3.js"],
-  },
-]
+interface Project {
+  id: number
+  slug: string
+  title: string
+  description: string
+  image: string
+  tags: string[]
+}
 
 const technologies = ["Java", "JavaScript", "ReactJS", "Python", "Node.js", "Firebase", "Git", "R-script"]
 
@@ -115,11 +94,41 @@ export default function HomePage() {
   const [showIniciosButton, setShowIniciosButton] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [featuredProjects, setFeaturedProjects] = useState<Project[]>([])
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   })
+
+  // Fetch featured projects from Strapi
+  useEffect(() => {
+    async function fetchProjects() {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?populate=*&sort[0]=order:asc&pagination[limit]=3`)
+        const data = await response.json()
+        
+        const projects: Project[] = data.data?.map((item: any) => {
+          const imageUrl = item.attributes.image?.data?.attributes?.url
+          return {
+            id: item.id,
+            slug: item.attributes.slug,
+            title: item.attributes.title,
+            description: item.attributes.description,
+            image: imageUrl ? getStrapiMedia(imageUrl) : '/placeholder.png',
+            tags: item.attributes.tags || []
+          }
+        }) || []
+        
+        setFeaturedProjects(projects)
+      } catch (error) {
+        console.error('Error fetching projects:', error)
+        // Keep empty array on error
+      }
+    }
+    
+    fetchProjects()
+  }, [])
 
   useEffect(() => {
     // Update age every day
@@ -452,7 +461,7 @@ export default function HomePage() {
                     <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
                       <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">{featuredProjects[1].title}</h3>
                       <p className="text-xs sm:text-sm text-white/90 mb-3 sm:mb-4">
-                        {language === "es" ? featuredProjects[1].description : featuredProjects[1].descriptionEn}
+                        {featuredProjects[1].description}
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {featuredProjects[1].tags.map((tag) => (
@@ -482,7 +491,7 @@ export default function HomePage() {
                     <div className="absolute bottom-4 left-4 right-4">
                       <h3 className="text-lg sm:text-xl font-semibold text-white mb-1">{featuredProjects[2].title}</h3>
                       <p className="text-xs sm:text-sm text-white/80">
-                        {language === "es" ? featuredProjects[2].description : featuredProjects[2].descriptionEn}
+                        {featuredProjects[2].description}
                       </p>
                     </div>
                   </div>
@@ -690,7 +699,7 @@ export default function HomePage() {
                     <div className="absolute bottom-4 left-4 right-4">
                       <h3 className="text-lg sm:text-xl font-semibold text-white mb-1">{featuredProjects[0].title}</h3>
                       <p className="text-xs sm:text-sm text-white/80">
-                        {language === "es" ? featuredProjects[0].description : featuredProjects[0].descriptionEn}
+                        {featuredProjects[0].description}
                       </p>
                     </div>
                   </div>

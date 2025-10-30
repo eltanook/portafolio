@@ -103,4 +103,117 @@ export function formatStrapiData<T>(data: any): T {
   return data as T
 }
 
+/**
+ * Obtener proyectos featured (los 3 primeros)
+ */
+export async function getFeaturedProjects() {
+  try {
+    const data = await fetchAPI('/projects', {
+      params: {
+        'populate': '*',
+        'sort[0]': 'order:asc',
+        'pagination[limit]': 3,
+      },
+    })
+    return formatStrapiData(data)
+  } catch (error) {
+    console.error('Error fetching featured projects:', error)
+    return { data: [] }
+  }
+}
+
+/**
+ * Obtener todos los proyectos
+ */
+export async function getAllProjects() {
+  try {
+    const data = await fetchAPI('/projects', {
+      params: {
+        'populate': '*',
+        'sort[0]': 'order:asc',
+      },
+    })
+    return formatStrapiData(data)
+  } catch (error) {
+    console.error('Error fetching projects:', error)
+    return { data: [] }
+  }
+}
+
+/**
+ * Obtener un proyecto por slug
+ */
+export async function getProjectBySlug(slug: string) {
+  try {
+    const data = await fetchAPI('/projects', {
+      params: {
+        'filters[slug][$eq]': slug,
+        'populate': '*',
+      },
+    })
+    const formatted: any = formatStrapiData(data)
+    return formatted?.data?.[0] || null
+  } catch (error) {
+    console.error('Error fetching project:', error)
+    return null
+  }
+}
+
+/**
+ * Obtener todos los blogs
+ */
+export async function getAllBlogs() {
+  try {
+    const data = await fetchAPI('/blogs', {
+      params: {
+        'populate': '*',
+        'sort[0]': 'date:desc',
+      },
+    })
+    return formatStrapiData(data)
+  } catch (error) {
+    console.error('Error fetching blogs:', error)
+    return { data: [] }
+  }
+}
+
+/**
+ * Obtener blogs featured
+ */
+export async function getFeaturedBlogs() {
+  try {
+    const data = await fetchAPI('/blogs', {
+      params: {
+        'filters[featured][$eq]': true,
+        'populate': '*',
+        'sort[0]': 'date:desc',
+        'pagination[limit]': 3,
+      },
+    })
+    return formatStrapiData(data)
+  } catch (error) {
+    console.error('Error fetching featured blogs:', error)
+    return { data: [] }
+  }
+}
+
+/**
+ * Obtener un blog por slug
+ */
+export async function getBlogBySlug(slug: string) {
+  try {
+    const data = await fetchAPI('/blogs', {
+      params: {
+        'filters[slug][$eq]': slug,
+        'populate': '*',
+      },
+    })
+    const formatted: any = formatStrapiData(data)
+    return formatted?.data?.[0] || null
+  } catch (error) {
+    console.error('Error fetching blog:', error)
+    return null
+  }
+}
+
 export { fetchAPI, STRAPI_URL }
