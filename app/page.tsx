@@ -116,6 +116,8 @@ export default function HomePage() {
         )
         const data = await response.json()
         
+        console.log('✅ Strapi Response (Home):', data)
+        
         const projects: Project[] = data.data?.map((item: any) => {
           const imageUrl = item.attributes.image?.data?.attributes?.url
           return {

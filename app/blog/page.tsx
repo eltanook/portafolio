@@ -7,15 +7,74 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
-import { blogPosts } from "@/lib/blog-data"
+import { getStrapiMedia } from "@/lib/strapi"
 
-const POSTS_PER_PAGE = 6 // 2 rows x 3 columns = 6 posts per page
+interface BlogPost {
+  id: number
+  slug: string
+  title: string
+  excerpt: string
+  image: string
+  category: string
+  date: string
+  readTime: string
+  author: string
+  featured: boolean
+}
+
+const POSTS_PER_PAGE = 6
 
 export default function BlogPage() {
   const { t, language } = useLanguage()
   const [currentPage, setCurrentPage] = useState(1)
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([])
+  const [featuredPost, setFeaturedPost] = useState<BlogPost | null>(null)
 
   const observerRef = useRef<IntersectionObserver | null>(null)
+
+  // Fetch blogs from Strapi
+  useEffect(() => {
+    async function fetchBlogs() {
+      try {
+        const headers: HeadersInit = {}
+        if (process.env.NEXT_PUBLIC_STRAPI_API_TOKEN) {
+          headers['Authorization'] = `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`
+        }
+        
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/blogs?populate=*&sort[0]=date:desc`,
+          { headers }
+        )
+        const data = await response.json()
+        
+        console.log('✅ Strapi Response (Blog):', data)
+        
+        const posts: BlogPost[] = data.data?.map((item: any) => {
+          const imageUrl = item.attributes.image?.data?.attributes?.url
+          return {
+            id: item.id,
+            slug: item.attributes.slug,
+            title: item.attributes.title,
+            excerpt: item.attributes.excerpt,
+            image: imageUrl ? getStrapiMedia(imageUrl) : '/placeholder.png',
+            category: item.attributes.category,
+            date: item.attributes.date,
+            readTime: item.attributes.readTime || '5',
+            author: item.attributes.author || 'Tomás Nadal',
+            featured: item.attributes.featured || false
+          }
+        }) || []
+        
+        const featured = posts.find(p => p.featured)
+        setFeaturedPost(featured || posts[0] || null)
+        setBlogPosts(posts)
+      } catch (error) {
+        console.error('Error fetching blogs:', error)
+      }
+    }
+    
+    fetchBlogs()
+  }, [])
 
   useEffect(() => {
     document.title = language === "es" ? "Tomás Nadal - Blog" : "Tomás Nadal - Blog"
@@ -41,7 +100,7 @@ export default function BlogPage() {
     return () => observerRef.current?.disconnect()
   }, [])
 
-  const postsToShow = blogPosts.slice(1) // Exclude featured post
+  const postsToShow = featuredPost ? blogPosts.filter(p => p.id !== featuredPost.id) : blogPosts
   const totalPages = Math.max(1, Math.ceil(postsToShow.length / POSTS_PER_PAGE))
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE
   const paginatedPosts = postsToShow.slice(startIndex, startIndex + POSTS_PER_PAGE)
@@ -61,21 +120,22 @@ export default function BlogPage() {
               </p>
             </div>
 
-            <div className="mb-12 sm:mb-16">
-              <Link href={`/blog/${blogPosts[0].slug}`} className="block group">
+            {featuredPost && (
+              <div className="mb-12 sm:mb-16">
+                <Link href={`/blog/${featuredPost.slug}`} className="block group">
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Image on left - 50% with shadow and date label */}
                   <div className="relative h-64 md:h-full min-h-[300px] rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
                     <Image
-                      src={blogPosts[0].image || "/placeholder.svg"}
-                      alt={language === "es" ? blogPosts[0].title : blogPosts[0].titleEn}
+                      src={featuredPost.image || "/placeholder.svg"}
+                      alt={featuredPost.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       priority
                     />
                     <div className="absolute top-4 left-4 bg-white dark:bg-white px-3 py-1 rounded-md shadow-sm">
                       <span className="text-[10px] font-medium text-[#0f0f0f]">
-                        {new Date(blogPosts[0].date).toLocaleDateString(language === "es" ? "es-ES" : "en-US", {
+                        {new Date(featuredPost.date).toLocaleDateString(language === "es" ? "es-ES" : "en-US", {
                           day: "numeric",
                           month: "short",
                           year: "numeric",
@@ -87,29 +147,30 @@ export default function BlogPage() {
                   {/* Content on right - 50% */}
                   <div className="flex flex-col justify-center">
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-foreground mb-4 group-hover:text-accent transition-colors duration-300 line-clamp-3">
-                      {language === "es" ? blogPosts[0].title : blogPosts[0].titleEn}
+                      {featuredPost.title}
                     </h2>
 
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 line-clamp-4">
-                      {language === "es" ? blogPosts[0].excerpt : blogPosts[0].excerptEn}
+                      {featuredPost.excerpt}
                     </p>
 
                     <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-muted-foreground">
                       <div className="flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         <span>
-                          {blogPosts[0].readTime} {t("blog.minRead")}
+                          {featuredPost.readTime} {t("blog.minRead")}
                         </span>
                       </div>
                       <span>•</span>
                       <span className="text-xs px-2.5 py-1 rounded-md bg-accent/10 text-accent font-medium">
-                        {language === "es" ? blogPosts[0].category : blogPosts[0].categoryEn}
+                        {featuredPost.category}
                       </span>
                     </div>
                   </div>
                 </div>
               </Link>
             </div>
+            )}
 
             {/* Blog Posts Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -119,7 +180,7 @@ export default function BlogPage() {
                     <div className="relative h-48 sm:h-56 overflow-hidden rounded-lg shadow-md group-hover:shadow-xl transition-shadow duration-300 mb-4">
                       <Image
                         src={post.image || "/placeholder.svg"}
-                        alt={language === "es" ? post.title : post.titleEn}
+                        alt={post.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
@@ -137,11 +198,11 @@ export default function BlogPage() {
 
                     <div className="space-y-3 flex-1 flex flex-col">
                       <h3 className="text-lg sm:text-xl font-semibold text-foreground line-clamp-2 group-hover:text-accent transition-colors duration-300">
-                        {language === "es" ? post.title : post.titleEn}
+                        {post.title}
                       </h3>
 
                       <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 flex-1">
-                        {language === "es" ? post.excerpt : post.excerptEn}
+                        {post.excerpt}
                       </p>
 
                       <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground pt-2">
@@ -153,7 +214,7 @@ export default function BlogPage() {
                         </div>
                         <span>•</span>
                         <span className="px-2.5 py-1 rounded-md bg-accent/10 text-accent font-medium">
-                          {language === "es" ? post.category : post.categoryEn}
+                          {post.category}
                         </span>
                       </div>
                     </div>
