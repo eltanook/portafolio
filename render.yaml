@@ -1,0 +1,60 @@
+services:
+  # Strapi Backend
+  - type: web
+    name: strapi-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd strapi-backend && npm install && npm run build
+    startCommand: cd strapi-backend && npm run start
+    healthCheckPath: /_health
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.0
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
+      - key: DATABASE_CLIENT
+        value: postgres
+      - key: DATABASE_HOST
+        fromDatabase:
+          name: strapi-db
+          property: host
+      - key: DATABASE_PORT
+        fromDatabase:
+          name: strapi-db
+          property: port
+      - key: DATABASE_NAME
+        fromDatabase:
+          name: strapi-db
+          property: database
+      - key: DATABASE_USERNAME
+        fromDatabase:
+          name: strapi-db
+          property: user
+      - key: DATABASE_PASSWORD
+        fromDatabase:
+          name: strapi-db
+          property: password
+      - key: DATABASE_SSL
+        value: true
+      - key: APP_KEYS
+        generateValue: true
+      - key: API_TOKEN_SALT
+        generateValue: true
+      - key: ADMIN_JWT_SECRET
+        generateValue: true
+      - key: TRANSFER_TOKEN_SALT
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+
+databases:
+  # PostgreSQL Database
+  - name: strapi-db
+    databaseName: strapi_production
+    plan: free
+    region: oregon
