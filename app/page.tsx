@@ -182,7 +182,13 @@ export default function HomePage() {
       <Navigation />
       <main className="min-h-screen pt-16">
         <section className="relative py-8 sm:py-12 bg-background">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          {/* Efecto de luces naranjas en el fondo */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ff620a]/5 rounded-full blur-[120px] animate-pulse-slow" />
+            <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#ff620a]/3 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
+            <div className="absolute bottom-1/4 left-1/2 w-80 h-80 bg-[#ff620a]/4 rounded-full blur-[110px] animate-pulse-slow" style={{ animationDelay: '4s' }} />
+          </div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
             <Card className="bg-[#1a1a1a] dark:bg-[#0f0f0f] border-0 shadow-lg overflow-hidden">
               <CardContent className="p-8 sm:p-10 lg:p-12">
                 <div className="flex flex-col items-center text-center space-y-6 max-w-3xl mx-auto">
@@ -266,7 +272,7 @@ export default function HomePage() {
 
                       <div className="relative w-full h-24 mb-6 overflow-hidden rounded-lg">
                         <Image
-                          src="/programmer-working-on-laptop-with-code.jpg"
+                          src="/andrew-kliatskyi-B_Z9jqassqE-unsplash.jpg"
                           alt="Tomás Nadal working"
                           fill
                           className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
@@ -354,7 +360,7 @@ export default function HomePage() {
                     </div>
                     <div className="relative w-full h-64 overflow-hidden rounded-lg mt-4">
                       <Image
-                        src="/programmer-working-on-laptop-with-code.jpg"
+                        src="/Gemini_Generated_Image_xml7o8xml7o8xml7.png"
                         alt="Tomás Nadal working"
                         fill
                         className="object-cover"
@@ -413,7 +419,7 @@ export default function HomePage() {
                   <div className="relative h-full min-h-[250px] p-4">
                     <div className="relative w-full h-full">
                       <Image
-                        src="/programmer-working-on-laptop-with-code.jpg"
+                        src="/Gemini_Generated_Image_xml7o8xml7o8xml7.png"
                         alt="Mi trayectoria"
                         fill
                         className="object-cover rounded-lg grayscale group-hover:grayscale-0 transition-all duration-500"
