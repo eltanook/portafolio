@@ -12,60 +12,74 @@
 
 ### 1. E-Commerce Platform ⭐ FEATURED
 
-**Campo Title:**  
+**title*** (Text - OBLIGATORIO):
 ```
 E-Commerce Platform
 ```
 
-**Campo Slug:** (se genera automático)  
+**slug*** (UID - se genera automático):
 ```
 ecommerce-platform
 ```
 
-**Campo Description:**  
+**description*** (Text - OBLIGATORIO):
 ```
 Plataforma de comercio electrónico completa con pasarela de pagos y gestión de inventario. Complete e-commerce platform with payment gateway and inventory management.
 ```
 
-**Campo Content:** (Rich text - opcional, déjalo vacío)
+**content** (Rich text Markdown - opcional):
+```
+Dejar vacío
+```
 
-**Campo Image:**  
-Sube la imagen: `public/modern-ecommerce-dashboard.png`
+**image*** (Media - OBLIGATORIO):
+```
+Subir: public/modern-ecommerce-dashboard.png
+```
 
-**Campo Gallery:** (opcional - déjalo vacío)
+**gallery** (Multiple Media - opcional):
+```
+Dejar vacío
+```
 
-**Campo Tags:** (JSON)  
+**tags*** (JSON - OBLIGATORIO):
 ```json
 ["Next.js", "Stripe", "PostgreSQL"]
 ```
 
-**Campo Category:**  
+**category*** (Text - OBLIGATORIO):
 ```
 Web App
 ```
 
-**Campo Demo URL:**  
+**demoUrl** (Text - opcional):
 ```
 https://demo.com
 ```
 
-**Campo GitHub URL:** (opcional - déjalo vacío)
+**githubUrl** (Text - OMITIR, dejar vacío)
 
-**Campo Featured:** ✅ **Activar**
+**featured** (Boolean):
+```
+✅ ACTIVAR (true)
+```
 
-**Campo Order:**  
+**order** (Number):
 ```
 1
 ```
 
-**Campo Technologies:** (JSON)  
+**technologies** (JSON):
 ```json
 ["Next.js", "Stripe", "PostgreSQL", "Tailwind CSS"]
 ```
 
-**Campo Client:** (opcional - déjalo vacío)
+**client** (Text - opcional):
+```
+Dejar vacío
+```
 
-**Campo Year:**  
+**year** (Number):
 ```
 2024
 ```
@@ -76,52 +90,74 @@ https://demo.com
 
 ### 2. Task Management App ⭐ FEATURED
 
-**Title:**  
+**title*** (Text):  
 ```
 Task Management App
 ```
 
-**Slug:**  
+**slug*** (UID):  
 ```
 task-management-app
 ```
 
-**Description:**  
+**description*** (Text):  
 ```
 Aplicación de gestión de tareas con colaboración en tiempo real. Task management application with real-time collaboration.
 ```
 
-**Image:**  
-Sube: `public/task-management-interface.png`
+**content** (Rich text - opcional):
+```
+Dejar vacío
+```
 
-**Tags:** (JSON)  
+**image*** (Media):
+```
+Subir: public/task-management-interface.png
+```
+
+**gallery** (opcional):
+```
+Dejar vacío
+```
+
+**tags*** (JSON):  
 ```json
 ["React", "Firebase", "Tailwind"]
 ```
 
-**Category:**  
+**category*** (Text):  
 ```
 Web App
 ```
 
-**Demo URL:**  
+**demoUrl** (Text):
 ```
 https://demo.com
 ```
 
-**Featured:** ✅ **Activar**
+**githubUrl** (OMITIR)
 
-**Order:**  
+**featured** (Boolean):
+```
+✅ ACTIVAR (true)
+```
+
+**order** (Number):  
 ```
 2
 ```
 
-**Technologies:** (JSON)  
+**technologies** (JSON):  
 ```json
 ["React", "Firebase", "Tailwind CSS"]
 ```
 
-**Year:**  
+**client** (opcional):
+```
+Dejar vacío
+```
+
+**year** (Number):  
 ```
 2024
 ```
@@ -132,52 +168,74 @@ https://demo.com
 
 ### 3. Portfolio CMS ⭐ FEATURED
 
-**Title:**  
+**title*** (Text):
 ```
 Portfolio CMS
 ```
 
-**Slug:**  
+**slug*** (UID):
 ```
 portfolio-cms
 ```
 
-**Description:**  
+**description*** (Text):
 ```
 Sistema de gestión de contenidos para portfolios creativos. Content management system for creative portfolios.
 ```
 
-**Image:**  
-Sube: `public/placeholder.svg` (o cualquier imagen temporal)
+**content** (opcional):
+```
+Dejar vacío
+```
 
-**Tags:** (JSON)  
+**image*** (Media):
+```
+Subir: public/placeholder.svg
+```
+
+**gallery** (opcional):
+```
+Dejar vacío
+```
+
+**tags*** (JSON):
 ```json
 ["Next.js", "Strapi", "GraphQL"]
 ```
 
-**Category:**  
+**category*** (Text):
 ```
 CMS
 ```
 
-**Demo URL:**  
+**demoUrl** (Text):
 ```
 https://demo.com
 ```
 
-**Featured:** ✅ **Activar**
+**githubUrl** (OMITIR)
 
-**Order:**  
+**featured** (Boolean):
+```
+✅ ACTIVAR (true)
+```
+
+**order** (Number):
 ```
 3
 ```
 
-**Technologies:** (JSON)  
+**technologies** (JSON):
 ```json
 ["Next.js", "Strapi", "GraphQL"]
 ```
 
-**Year:**  
+**client** (opcional):
+```
+Dejar vacío
+```
+
+**year** (Number):
 ```
 2024
 ```
@@ -188,52 +246,74 @@ https://demo.com
 
 ### 4. Analytics Dashboard
 
-**Title:**  
+**title*** (Text):
 ```
 Analytics Dashboard
 ```
 
-**Slug:**  
+**slug*** (UID):
 ```
 analytics-dashboard
 ```
 
-**Description:**  
+**description*** (Text):
 ```
 Dashboard de análisis con visualización de datos en tiempo real. Analytics dashboard with real-time data visualization.
 ```
 
-**Image:**  
-Sube: `public/analytics-dashboard-charts.png`
+**content** (opcional):
+```
+Dejar vacío
+```
 
-**Tags:** (JSON)  
+**image*** (Media):
+```
+Subir: public/analytics-dashboard-charts.png
+```
+
+**gallery** (opcional):
+```
+Dejar vacío
+```
+
+**tags*** (JSON):
 ```json
 ["React", "D3.js", "Node.js"]
 ```
 
-**Category:**  
+**category*** (Text):
 ```
 Dashboard
 ```
 
-**Demo URL:**  
+**demoUrl** (Text):
 ```
 https://demo.com
 ```
 
-**Featured:** ❌ **NO activar**
+**githubUrl** (OMITIR)
 
-**Order:**  
+**featured** (Boolean):
+```
+❌ NO ACTIVAR (false)
+```
+
+**order** (Number):
 ```
 4
 ```
 
-**Technologies:** (JSON)  
+**technologies** (JSON):
 ```json
 ["React", "D3.js", "Node.js"]
 ```
 
-**Year:**  
+**client** (opcional):
+```
+Dejar vacío
+```
+
+**year** (Number):
 ```
 2023
 ```
@@ -244,52 +324,74 @@ https://demo.com
 
 ### 5. Social Media App
 
-**Title:**  
+**title*** (Text):
 ```
 Social Media App
 ```
 
-**Slug:**  
+**slug*** (UID):
 ```
 social-media-app
 ```
 
-**Description:**  
+**description*** (Text):
 ```
 Red social con mensajería instantánea y compartición de contenido. Social network with instant messaging and content sharing.
 ```
 
-**Image:**  
-Sube: `public/placeholder.svg`
+**content** (opcional):
+```
+Dejar vacío
+```
 
-**Tags:** (JSON)  
+**image*** (Media):
+```
+Subir: public/placeholder.svg
+```
+
+**gallery** (opcional):
+```
+Dejar vacío
+```
+
+**tags*** (JSON):
 ```json
 ["Next.js", "Socket.io", "MongoDB"]
 ```
 
-**Category:**  
+**category*** (Text):
 ```
 Web App
 ```
 
-**Demo URL:**  
+**demoUrl** (Text):
 ```
 https://demo.com
 ```
 
-**Featured:** ❌ **NO activar**
+**githubUrl** (OMITIR)
 
-**Order:**  
+**featured** (Boolean):
+```
+❌ NO ACTIVAR (false)
+```
+
+**order** (Number):
 ```
 5
 ```
 
-**Technologies:** (JSON)  
+**technologies** (JSON):
 ```json
 ["Next.js", "Socket.io", "MongoDB"]
 ```
 
-**Year:**  
+**client** (opcional):
+```
+Dejar vacío
+```
+
+**year** (Number):
 ```
 2023
 ```
@@ -300,52 +402,74 @@ https://demo.com
 
 ### 6. Booking System
 
-**Title:**  
+**title*** (Text):
 ```
 Booking System
 ```
 
-**Slug:**  
+**slug*** (UID):
 ```
 booking-system
 ```
 
-**Description:**  
+**description*** (Text):
 ```
 Sistema de reservas para servicios profesionales con calendario integrado. Booking system for professional services with integrated calendar.
 ```
 
-**Image:**  
-Sube: `public/placeholder.svg`
+**content** (opcional):
+```
+Dejar vacío
+```
 
-**Tags:** (JSON)  
+**image*** (Media):
+```
+Subir: public/placeholder.svg
+```
+
+**gallery** (opcional):
+```
+Dejar vacío
+```
+
+**tags*** (JSON):
 ```json
 ["React", "Express", "PostgreSQL"]
 ```
 
-**Category:**  
+**category*** (Text):
 ```
 Web App
 ```
 
-**Demo URL:**  
+**demoUrl** (Text):
 ```
 https://demo.com
 ```
 
-**Featured:** ❌ **NO activar**
+**githubUrl** (OMITIR)
 
-**Order:**  
+**featured** (Boolean):
+```
+❌ NO ACTIVAR (false)
+```
+
+**order** (Number):
 ```
 6
 ```
 
-**Technologies:** (JSON)  
+**technologies** (JSON):
 ```json
 ["React", "Express", "PostgreSQL"]
 ```
 
-**Year:**  
+**client** (opcional):
+```
+Dejar vacío
+```
+
+**year** (Number):
 ```
 2023
 ```
@@ -363,22 +487,22 @@ https://demo.com
 
 ### 1. Los sueños también se programan ⭐ FEATURED
 
-**Campo Title:**  
+**title*** (Text - OBLIGATORIO):
 ```
 Los sueños también se programan
 ```
 
-**Campo Slug:**  
+**slug*** (UID - se genera automático):
 ```
 los-suenos-tambien-se-programan
 ```
 
-**Campo Excerpt:**  
+**excerpt*** (Text - OBLIGATORIO):
 ```
 No hace falta tener todo resuelto para empezar. Hace falta empezar para empezar a resolver.
 ```
 
-**Campo Content:** (Rich text)  
+**content*** (Rich text Markdown - OBLIGATORIO):
 ```
 A veces me preguntan cómo arranqué con todo esto: con Nexium, con Zevetix, con la facultad, con los proyectos.
 
@@ -397,32 +521,37 @@ Hoy miro atrás y no me siento exitoso: **me siento en camino.** Y eso me llena.
 La verdadera diferencia entre el que sueña y el que logra está en el que, a pesar de todo, sigue escribiendo líneas nuevas.
 ```
 
-**Campo Image:**  
-Sube: `public/blog-1.png`
+**image*** (Media - OBLIGATORIO):
+```
+Subir: public/blog-1.png
+```
 
-**Campo Category:**  
+**category*** (Text - OBLIGATORIO):
 ```
 Motivación
 ```
 
-**Campo Date:**  
+**date*** (Date - OBLIGATORIO):
 ```
 2025-10-05
 ```
 
-**Campo Read Time:**  
+**readTime*** (Number - OBLIGATORIO):
 ```
 5
 ```
 
-**Campo Author:**  
+**author*** (Text - OBLIGATORIO):
 ```
 Tomás Nadal
 ```
 
-**Campo Featured:** ✅ **Activar**
+**featured** (Boolean):
+```
+✅ ACTIVAR (true)
+```
 
-**Campo Tags:** (JSON)  
+**tags** (JSON - opcional):
 ```json
 ["Motivación", "Historia personal", "Desarrollo"]
 ```
@@ -433,22 +562,22 @@ Tomás Nadal
 
 ### 2. La IA no te va a reemplazar ⭐ FEATURED
 
-**Title:**  
+**title*** (Text):
 ```
 La IA no te va a reemplazar (si sabés cómo apalancarte en ella)
 ```
 
-**Slug:**  
+**slug*** (UID):
 ```
 la-ia-no-te-va-a-reemplazar
 ```
 
-**Excerpt:**  
+**excerpt*** (Text):
 ```
 No es la IA la que te reemplaza. Es el miedo a aprender lo nuevo.
 ```
 
-**Content:**  
+**content*** (Rich text Markdown):
 ```
 Cada avance tecnológico viene con una ola de miedo. Y con la inteligencia artificial no fue distinto.
 
@@ -465,32 +594,37 @@ La diferencia entre ser reemplazado y ser potenciado está en la actitud. Podés
 El que se adapta no es el que sabe más, sino el que aprende más rápido. Y si entendés eso, no solo no vas a quedar atrás: vas a estar un paso adelante.
 ```
 
-**Image:**  
-Sube: `public/blog-2.png`
+**image*** (Media):
+```
+Subir: public/blog-2.png
+```
 
-**Category:**  
+**category*** (Text):
 ```
 Tecnología
 ```
 
-**Date:**  
+**date*** (Date):
 ```
 2025-09-09
 ```
 
-**Read Time:**  
+**readTime*** (Number):
 ```
 4
 ```
 
-**Author:**  
+**author*** (Text):
 ```
 Tomás Nadal
 ```
 
-**Featured:** ✅ **Activar**
+**featured** (Boolean):
+```
+✅ ACTIVAR (true)
+```
 
-**Tags:** (JSON)  
+**tags** (JSON):
 ```json
 ["IA", "Tecnología", "Futuro"]
 ```
@@ -501,22 +635,22 @@ Tomás Nadal
 
 ### 3. De la facultad al código ⭐ FEATURED
 
-**Title:**  
+**title*** (Text):  
 ```
 De la facultad al código: cómo Ciencia de Datos me cambió la forma de pensar productos
 ```
 
-**Slug:**  
+**slug*** (UID):  
 ```
 de-la-facultad-al-codigo
 ```
 
-**Excerpt:**  
+**excerpt*** (Text):  
 ```
 Aprender a programar me enseñó a construir. Estudiar Ciencia de Datos me enseñó a entender por qué algo vale la pena construirlo.
 ```
 
-**Content:**  
+**content*** (Rich text Markdown):  
 ```
 Cuando empecé Ciencia de Datos lo hice con una mezcla de curiosidad e intuición. Sentía que había algo en los números que explicaba mejor al mundo. Y con el tiempo descubrí que tenía razón.
 
@@ -533,32 +667,31 @@ Y eso también me cambió a nivel personal. Me enseñó a no aferrarme al ego, s
 La Ciencia de Datos me enseñó que el progreso real no está en tener razón, sino en **saber adaptarse al resultado.**
 ```
 
-**Image:**  
-Sube: `public/blog-3.png`
+**image*** (Media):`nSubir: `public/blog-3.png`
 
-**Category:**  
+**category*** (Text):  
 ```
 Educación
 ```
 
-**Date:**  
+**date*** (Date):  
 ```
 2025-09-18
 ```
 
-**Read Time:**  
+**readTime*** (Number):  
 ```
 5
 ```
 
-**Author:**  
+**author*** (Text):  
 ```
 Tomás Nadal
 ```
 
-**Featured:** ✅ **Activar**
+**featured** (Boolean):`n````n✅ ACTIVAR (true)`n```
 
-**Tags:** (JSON)  
+**tags** (JSON):  
 ```json
 ["Data Science", "Educación", "Programación"]
 ```
@@ -569,22 +702,22 @@ Tomás Nadal
 
 ### 4. Qué es una landing híbrida
 
-**Title:**  
+**title*** (Text):  
 ```
 Qué es una landing híbrida (y por qué casi todos los negocios necesitan una)
 ```
 
-**Slug:**  
+**slug*** (UID):  
 ```
 que-es-una-landing-hibrida
 ```
 
-**Excerpt:**  
+**excerpt*** (Text):  
 ```
 Ni tienda online, ni simple página de contacto. Una landing híbrida es ese punto medio entre mostrar y vender.
 ```
 
-**Content:**  
+**content*** (Rich text Markdown):  
 ```
 En estos años trabajando con marcas y emprendedores, vi el mismo problema repetirse una y otra vez: **quieren vender online, pero no están listos para un e-commerce completo.** Y ahí nace la idea de la landing híbrida.
 
@@ -602,32 +735,31 @@ Y lo mejor: permite que los negocios chicos compitan con los grandes. Porque el 
 Una buena landing híbrida no grita, convence. Y esa es, quizás, la base del marketing moderno: vender sin forzar.
 ```
 
-**Image:**  
-Sube: `public/blog-4.png`
+**image*** (Media):`nSubir: `public/blog-4.png`
 
-**Category:**  
+**category*** (Text):  
 ```
 Desarrollo Web
 ```
 
-**Date:**  
+**date*** (Date):  
 ```
 2025-09-26
 ```
 
-**Read Time:**  
+**readTime*** (Number):  
 ```
 5
 ```
 
-**Author:**  
+**author*** (Text):  
 ```
 Tomás Nadal
 ```
 
-**Featured:** ❌ **NO activar**
+**featured** (Boolean):`n````n❌ NO ACTIVAR (false)`n```
 
-**Tags:** (JSON)  
+**tags** (JSON):  
 ```json
 ["Landing pages", "Marketing", "E-commerce"]
 ```
@@ -638,22 +770,22 @@ Tomás Nadal
 
 ### 5. Diseñar sin diseñar
 
-**Title:**  
+**title*** (Text):  
 ```
 Diseñar sin diseñar: cuando la estética nace del propósito
 ```
 
-**Slug:**  
+**slug*** (UID):  
 ```
 disenar-sin-disenar
 ```
 
-**Excerpt:**  
+**excerpt*** (Text):  
 ```
 El diseño no se trata de agregar cosas. Se trata de decidir qué dejar afuera.
 ```
 
-**Content:**  
+**content*** (Rich text Markdown):  
 ```
 Hay una frase que me quedó grabada: *"Diseñar no es decorar, es ordenar."* Y con el tiempo, entendí que esa es exactamente la clave.
 
@@ -668,32 +800,31 @@ Diseñar sin diseñar no significa ser minimalista por moda. Significa **entende
 El diseño es, en el fondo, una conversación entre la lógica y la emoción. Y cuando esas dos se equilibran, todo encaja.
 ```
 
-**Image:**  
-Sube: `public/blog-5.png`
+**image*** (Media):`nSubir: `public/blog-5.png`
 
-**Category:**  
+**category*** (Text):  
 ```
 Diseño
 ```
 
-**Date:**  
+**date*** (Date):  
 ```
 2025-09-02
 ```
 
-**Read Time:**  
+**readTime*** (Number):  
 ```
 4
 ```
 
-**Author:**  
+**author*** (Text):  
 ```
 Tomás Nadal
 ```
 
-**Featured:** ❌ **NO activar**
+**featured** (Boolean):`n````n❌ NO ACTIVAR (false)`n```
 
-**Tags:** (JSON)  
+**tags** (JSON):  
 ```json
 ["Diseño", "UX", "Minimalismo"]
 ```
@@ -704,22 +835,22 @@ Tomás Nadal
 
 ### 6. Lo que aprendí supervisando programadores
 
-**Title:**  
+**title*** (Text):  
 ```
 Lo que aprendí supervisando programadores (aunque todavía me siento uno)
 ```
 
-**Slug:**  
+**slug*** (UID):  
 ```
 lo-que-aprendi-supervisando-programadores
 ```
 
-**Excerpt:**  
+**excerpt*** (Text):  
 ```
 Liderar no es saber más. Es saber acompañar.
 ```
 
-**Content:**  
+**content*** (Rich text Markdown):  
 ```
 Cuando empecé a coordinar proyectos en Nexium, lo hice con una mezcla de entusiasmo y miedo. Era raro pasar de escribir código a tener que **dirigir a otros que lo escriben.**
 
@@ -736,32 +867,31 @@ Sigo programando, sigo ensuciándome las manos. Porque si dejás de hacerlo, te 
 Hoy sé que liderar es, en el fondo, un acto de servicio: estar atento, sostener y empujar. No para figurar, sino para que todos lleguemos más lejos.
 ```
 
-**Image:**  
-Sube: `public/blog-6.png`
+**image*** (Media):`nSubir: `public/blog-6.png`
 
-**Category:**  
+**category*** (Text):  
 ```
 Liderazgo
 ```
 
-**Date:**  
+**date*** (Date):  
 ```
 2025-08-21
 ```
 
-**Read Time:**  
+**readTime*** (Number):  
 ```
 5
 ```
 
-**Author:**  
+**author*** (Text):  
 ```
 Tomás Nadal
 ```
 
-**Featured:** ❌ **NO activar**
+**featured** (Boolean):`n````n❌ NO ACTIVAR (false)`n```
 
-**Tags:** (JSON)  
+**tags** (JSON):  
 ```json
 ["Liderazgo", "Equipos", "Management"]
 ```
@@ -772,22 +902,22 @@ Tomás Nadal
 
 ### 7. Por qué medir importa más que opinar
 
-**Title:**  
+**title*** (Text):  
 ```
 Por qué medir importa más que opinar
 ```
 
-**Slug:**  
+**slug*** (UID):  
 ```
 por-que-medir-importa-mas-que-opinar
 ```
 
-**Excerpt:**  
+**excerpt*** (Text):  
 ```
 No hace falta tener razón. Hace falta tener datos.
 ```
 
-**Content:**  
+**content*** (Rich text Markdown):  
 ```
 En el mundo digital, las opiniones sobran. Todos tienen una idea, una intuición, una corazonada. Pero cuando los proyectos empiezan a escalar, **la diferencia entre avanzar y estancarse está en lo que medís.**
 
@@ -802,32 +932,31 @@ Hoy no tomo decisiones sin mirar resultados. Porque el marketing, el diseño y e
 Y cuando lo entendés, dejás de trabajar a ciegas. Dejás de opinar y empezás a construir con evidencia.
 ```
 
-**Image:**  
-Sube: `public/blog-7.png`
+**image*** (Media):`nSubir: `public/blog-7.png`
 
-**Category:**  
+**category*** (Text):  
 ```
 Data
 ```
 
-**Date:**  
+**date*** (Date):  
 ```
 2025-08-14
 ```
 
-**Read Time:**  
+**readTime*** (Number):  
 ```
 4
 ```
 
-**Author:**  
+**author*** (Text):  
 ```
 Tomás Nadal
 ```
 
-**Featured:** ❌ **NO activar**
+**featured** (Boolean):`n````n❌ NO ACTIVAR (false)`n```
 
-**Tags:** (JSON)  
+**tags** (JSON):  
 ```json
 ["Analytics", "Data", "Estrategia"]
 ```
