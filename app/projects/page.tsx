@@ -38,7 +38,15 @@ export default function ProjectsPage() {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?populate=*&sort[0]=order:asc`)
+        const headers: HeadersInit = {}
+        if (process.env.NEXT_PUBLIC_STRAPI_API_TOKEN) {
+          headers['Authorization'] = `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`
+        }
+        
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?populate=*&sort[0]=order:asc`,
+          { headers }
+        )
         const data = await response.json()
         
         const projectsList: Project[] = data.data?.map((item: any) => {

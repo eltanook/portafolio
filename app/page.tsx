@@ -105,7 +105,15 @@ export default function HomePage() {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?populate=*&sort[0]=order:asc&pagination[limit]=3`)
+        const headers: HeadersInit = {}
+        if (process.env.NEXT_PUBLIC_STRAPI_API_TOKEN) {
+          headers['Authorization'] = `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`
+        }
+        
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?populate=*&sort[0]=order:asc&pagination[limit]=3`,
+          { headers }
+        )
         const data = await response.json()
         
         const projects: Project[] = data.data?.map((item: any) => {
