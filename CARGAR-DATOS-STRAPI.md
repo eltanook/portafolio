@@ -8,13 +8,6 @@
 
 **Content Manager → Project → Create new entry**
 
-### Campos a llenar (los demás déjalos vacíos):
-- ✅ title
-- ✅ slug (se genera automático)
-- ✅ description
-- ✅ image
-- ✅ tags
-
 ---
 
 ### 1. E-Commerce Platform
@@ -24,9 +17,19 @@
 E-Commerce Platform
 ```
 
+**slug:** (se genera automático)
+```
+ecommerce-platform
+```
+
 **description:**
 ```
-Plataforma completa con Stripe
+Plataforma de comercio electrónico completa con pasarela de pagos y gestión de inventario. Complete e-commerce platform with payment gateway and inventory management.
+```
+
+**content:** (Rich text - dejar vacío o poner algo simple)
+```
+Dejar vacío
 ```
 
 **image:**
@@ -34,12 +37,46 @@ Plataforma completa con Stripe
 Subir: public/modern-ecommerce-dashboard.png
 ```
 
+**gallery:** (dejar vacío)
+
 **tags:**
 ```json
-["Next.js", "Stripe"]
+["Next.js", "Stripe", "PostgreSQL"]
 ```
 
-**Dejar vacío:** content, gallery, category, demoUrl, githubUrl, featured, order, technologies, client, year
+**category:**
+```
+Web App
+```
+
+**demoUrl:**
+```
+https://demo.com
+```
+
+**githubUrl:** (dejar vacío)
+
+**featured:**
+```
+✅ ACTIVAR (true)
+```
+
+**order:**
+```
+1
+```
+
+**technologies:**
+```json
+["Next.js", "Stripe", "PostgreSQL", "Tailwind CSS"]
+```
+
+**client:** (dejar vacío)
+
+**year:**
+```
+2024
+```
 
 **Acción:** Save → Publish
 
@@ -49,12 +86,22 @@ Subir: public/modern-ecommerce-dashboard.png
 
 **title:**
 ```
-Task Management
+Task Management App
+```
+
+**slug:**
+```
+task-management-app
 ```
 
 **description:**
 ```
-Colaboración en tiempo real
+Aplicación de gestión de tareas con colaboración en tiempo real. Task management application with real-time collaboration.
+```
+
+**content:** (dejar vacío)
+```
+Dejar vacío
 ```
 
 **image:**
@@ -62,12 +109,46 @@ Colaboración en tiempo real
 Subir: public/task-management-interface.png
 ```
 
+**gallery:** (dejar vacío)
+
 **tags:**
 ```json
-["React", "Firebase"]
+["React", "Firebase", "Tailwind"]
 ```
 
-**Dejar vacío:** todo lo demás
+**category:**
+```
+Web App
+```
+
+**demoUrl:**
+```
+https://demo.com
+```
+
+**githubUrl:** (dejar vacío)
+
+**featured:**
+```
+✅ ACTIVAR (true)
+```
+
+**order:**
+```
+2
+```
+
+**technologies:**
+```json
+["React", "Firebase", "Tailwind CSS"]
+```
+
+**client:** (dejar vacío)
+
+**year:**
+```
+2024
+```
 
 **Acción:** Save → Publish
 
@@ -80,9 +161,19 @@ Subir: public/task-management-interface.png
 Analytics Dashboard
 ```
 
+**slug:**
+```
+analytics-dashboard
+```
+
 **description:**
 ```
-Visualización de datos
+Dashboard de análisis con visualización de datos en tiempo real. Analytics dashboard with real-time data visualization.
+```
+
+**content:** (dejar vacío)
+```
+Dejar vacío
 ```
 
 **image:**
@@ -90,12 +181,46 @@ Visualización de datos
 Subir: public/analytics-dashboard-charts.png
 ```
 
+**gallery:** (dejar vacío)
+
 **tags:**
 ```json
-["React", "D3.js"]
+["React", "D3.js", "Node.js"]
 ```
 
-**Dejar vacío:** todo lo demás
+**category:**
+```
+Dashboard
+```
+
+**demoUrl:**
+```
+https://demo.com
+```
+
+**githubUrl:** (dejar vacío)
+
+**featured:**
+```
+✅ ACTIVAR (true)
+```
+
+**order:**
+```
+3
+```
+
+**technologies:**
+```json
+["React", "D3.js", "Node.js"]
+```
+
+**client:** (dejar vacío)
+
+**year:**
+```
+2023
+```
 
 **Acción:** Save → Publish
 
