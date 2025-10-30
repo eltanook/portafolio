@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
     "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint",
-    "start": "next start"
+    "clean": "powershell -ExecutionPolicy Bypass -File ./scripts/cleanup.ps1",
+    "setup": "powershell -ExecutionPolicy Bypass -File ./scripts/setup.ps1",
+    "strapi:dev": "cd strapi-backend && npm run develop",
+    "strapi:build": "cd strapi-backend && npm run build",
+    "strapi:start": "cd strapi-backend && npm run start"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "latest",
