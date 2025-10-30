@@ -111,7 +111,7 @@ export default function HomePage() {
         }
         
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?populate=*&sort[0]=order:asc&pagination[limit]=3`,
+          `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/project?populate=*&sort[0]=order:asc&pagination[limit]=3`,
           { headers }
         )
         const data = await response.json()

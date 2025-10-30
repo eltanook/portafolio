@@ -108,7 +108,7 @@ export function formatStrapiData<T>(data: any): T {
  */
 export async function getFeaturedProjects() {
   try {
-    const data = await fetchAPI('/projects', {
+    const data = await fetchAPI('/project', {
       params: {
         'populate': '*',
         'sort[0]': 'order:asc',
@@ -127,7 +127,7 @@ export async function getFeaturedProjects() {
  */
 export async function getAllProjects() {
   try {
-    const data = await fetchAPI('/projects', {
+    const data = await fetchAPI('/project', {
       params: {
         'populate': '*',
         'sort[0]': 'order:asc',
@@ -135,8 +135,8 @@ export async function getAllProjects() {
     })
     return formatStrapiData(data)
   } catch (error) {
-    console.error('Error fetching projects:', error)
-    return { data: [] }
+    console.error('Error fetching all projects:', error)
+    return null
   }
 }
 
@@ -145,7 +145,7 @@ export async function getAllProjects() {
  */
 export async function getProjectBySlug(slug: string) {
   try {
-    const data = await fetchAPI('/projects', {
+    const data = await fetchAPI('/project', {
       params: {
         'filters[slug][$eq]': slug,
         'populate': '*',
@@ -164,7 +164,7 @@ export async function getProjectBySlug(slug: string) {
  */
 export async function getAllBlogs() {
   try {
-    const data = await fetchAPI('/blogs', {
+    const data = await fetchAPI('/blog', {
       params: {
         'populate': '*',
         'sort[0]': 'date:desc',
@@ -172,8 +172,8 @@ export async function getAllBlogs() {
     })
     return formatStrapiData(data)
   } catch (error) {
-    console.error('Error fetching blogs:', error)
-    return { data: [] }
+    console.error('Error fetching all blogs:', error)
+    return null
   }
 }
 
@@ -182,18 +182,17 @@ export async function getAllBlogs() {
  */
 export async function getFeaturedBlogs() {
   try {
-    const data = await fetchAPI('/blogs', {
+    const data = await fetchAPI('/blog', {
       params: {
         'filters[featured][$eq]': true,
         'populate': '*',
         'sort[0]': 'date:desc',
-        'pagination[limit]': 3,
       },
     })
     return formatStrapiData(data)
   } catch (error) {
     console.error('Error fetching featured blogs:', error)
-    return { data: [] }
+    return null
   }
 }
 
