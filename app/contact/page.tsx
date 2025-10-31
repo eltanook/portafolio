@@ -24,15 +24,27 @@ export default function ContactPage() {
     document.title = language === "es" ? "Tomás Nadal - Contacto" : "Tomás Nadal - Contact"
   }, [language])
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    setIsSubmitting(false)
-    setFormData({ name: "", email: "", message: "" })
+    
+    const form = e.target as HTMLFormElement
+    const formData = new FormData(form)
+    
+    try {
+      await fetch("https://formsubmit.co/tomasnadal04@gmail.com", {
+        method: "POST",
+        body: formData,
+      })
+      setFormData({ name: "", email: "", message: "" })
+    } catch (error) {
+      console.error("Error sending form:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
@@ -43,8 +55,8 @@ export default function ContactPage() {
     {
       icon: Mail,
       label: "Email",
-      value: "tomasnadal@gmail.com",
-      href: "mailto:tomasnadal@gmail.com",
+      value: "tomasnadal04@gmail.com",
+      href: "mailto:tomasnadal04@gmail.com",
     },
     {
       icon: FaWhatsapp,

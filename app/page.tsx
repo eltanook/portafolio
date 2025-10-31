@@ -111,12 +111,10 @@ export default function HomePage() {
         }
         
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/project?populate=*&sort[0]=order:asc&pagination[limit]=3`,
+          `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?populate=*&sort[0]=order:asc&pagination[limit]=3`,
           { headers }
         )
         const data = await response.json()
-        
-        console.log('✅ Strapi Response (Home):', data)
         
         const projects: Project[] = data.data?.map((item: any) => {
           const imageUrl = item.attributes.image?.data?.attributes?.url
@@ -217,7 +215,7 @@ export default function HomePage() {
 
                   <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-accent min-h-[2.5rem] flex items-center">
                     <TypingEffect
-                      texts={["Full Stack Developer", "Data Analyst"]}
+                      texts={[language === "es" ? "Desarrollador Web" : "Web Developer", language === "es" ? "Estudiante de Ciencia de Datos" : "Data Science Student"]}
                       typingSpeed={100}
                       deletingSpeed={50}
                       pauseDuration={2000}
@@ -226,8 +224,8 @@ export default function HomePage() {
 
                   <p className="text-base sm:text-lg text-white/70 max-w-2xl leading-relaxed">
                     {language === "es"
-                      ? "Creo soluciones web modernas y escalables que transforman ideas en experiencias digitales excepcionales."
-                      : "I create modern and scalable web solutions that transform ideas into exceptional digital experiences."}
+                      ? "Me gusta crear soluciones, convirtiendo la tecnología en una herramienta al servicio del prójimo."
+                      : "I like to create solutions, turning technology into a tool to serve others."}
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
@@ -270,8 +268,8 @@ export default function HomePage() {
                       <h2 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">Tomás Nadal</h2>
                       <p className="text-muted-foreground leading-relaxed mb-6">
                         {language === "es"
-                          ? "Soy Tomás Nadal, un joven desarrollador web freelance de Buenos Aires, Argentina. Mi pasión por la programación impulsa mi día a día mientras perfecciono mis habilidades..."
-                          : "I'm Tomás Nadal, a young freelance web developer from Buenos Aires, Argentina. My passion for programming drives my day-to-day as I perfect my skills..."}
+                          ? "Soy Tomás Nadal, desarrollador web de Buenos Aires, Argentina. Mi pasión es crear soluciones digitales innovadoras que aporten valor real. Cada proyecto es una oportunidad para transformar ideas en herramientas al servicio de las personas."
+                          : "I'm Tomás Nadal, a web developer from Buenos Aires, Argentina. My passion is creating innovative digital solutions that provide real value. Each project is an opportunity to transform ideas into tools that serve people."}
                       </p>
 
                       <div className="relative overflow-hidden mb-6 h-8">
@@ -355,8 +353,8 @@ export default function HomePage() {
                     <div className="text-base leading-relaxed space-y-4 text-muted-foreground">
                       <div>
                         {language === "es"
-                          ? "Soy Tomás Nadal, un joven desarrollador web freelance de Buenos Aires, Argentina. Mi pasión por la programación impulsa mi día a día mientras perfecciono mis habilidades."
-                          : "I'm Tomás Nadal, a young freelance web developer from Buenos Aires, Argentina. My passion for programming drives my day-to-day as I perfect my skills."}
+                          ? "Soy Tomás Nadal, desarrollador web de Buenos Aires, Argentina. Mi pasión es crear soluciones digitales innovadoras que aporten valor real. Cada proyecto es una oportunidad para transformar ideas en herramientas al servicio de las personas."
+                          : "I'm Tomás Nadal, a web developer from Buenos Aires, Argentina. My passion is creating innovative digital solutions that provide real value. Each project is an opportunity to transform ideas into tools that serve people."}
                       </div>
                       <div>
                         {language === "es"
@@ -392,9 +390,9 @@ export default function HomePage() {
               <Card className="sm:col-span-2 bg-card border-0 shadow-sm">
                 <CardContent className="p-4 sm:p-6 h-full">
                   <div className="grid grid-cols-3 gap-2 sm:gap-4 h-full">
-                    <CounterCard end={50} label={language === "es" ? "Proyectos" : "Projects"} />
+                    <CounterCard end={70} label={language === "es" ? "Proyectos" : "Projects"} />
                     <div className="flex flex-col justify-center items-center text-center border-x border-border">
-                      <CounterCard end={30} label={language === "es" ? "Clientes" : "Clients"} />
+                      <CounterCard end={40} label={language === "es" ? "Clientes" : "Clients"} />
                     </div>
                     <CounterCard end={5} label={language === "es" ? "Años" : "Years"} />
                   </div>
@@ -404,7 +402,12 @@ export default function HomePage() {
               <Card className="bg-card border-0 shadow-sm">
                 <CardContent className="p-4 sm:p-6 h-full flex flex-col justify-center items-center text-center gap-3">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#f5f4f6] dark:bg-[#1a1a1a] flex items-center justify-center">
-                    <User className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
+                    <svg className="w-6 h-6 sm:w-7 sm:h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="16" y1="2" x2="16" y2="6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="8" y1="2" x2="8" y2="6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="3" y1="10" x2="21" y2="10" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                   </div>
                   <div className="text-3xl sm:text-4xl font-semibold text-accent">{age}</div>
                   <span className="text-xs sm:text-sm font-medium text-muted-foreground">
@@ -426,7 +429,7 @@ export default function HomePage() {
                     size="sm"
                     className="bg-foreground dark:bg-background text-background dark:text-foreground hover:bg-foreground/90 dark:hover:bg-background/90 transition-all duration-300"
                   >
-                    <a href="/cv.pdf" download>
+                    <a href="/CV — Tomás Nadal 2025.pdf" download="CV-Tomas-Nadal-2025.pdf">
                       {language === "es" ? "Descargar" : "Download"}
                     </a>
                   </Button>
@@ -451,8 +454,8 @@ export default function HomePage() {
                     </h3>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
                       {language === "es"
-                        ? "Empecé en 2020 cuando compré mi primera computadora. Aprendí de manera autodidacta, participé en bootcamps y construí proyectos personales. Prefiero demostrar mi conocimiento a través del código. Hoy lidero el desarrollo completo en Nexium Solutions y creo experiencias digitales únicas en Zevetix."
-                        : "I started in 2020 when I bought my first computer. I learned self-taught, participated in bootcamps and built personal projects. I prefer to demonstrate my knowledge through code. Today I lead full development at Nexium Solutions and create unique digital experiences at Zevetix."}
+                        ? "Empecé en 2020 cuando compré mi primera computadora. Aprendí de manera autodidacta, participé en bootcamps y construí proyectos personales. Desde 2023 estudio la Licenciatura en Ciencia de Datos en la Universidad Nacional de San Martín. Mi pasión es crear soluciones innovadoras al servicio de los demás. Hoy lidero el desarrollo completo en Nexium Solutions y creo experiencias digitales únicas en Zevetix."
+                        : "I started in 2020 when I bought my first computer. I learned self-taught, participated in bootcamps and built personal projects. Since 2023 I've been studying Data Science at the National University of San Martín. My passion is creating innovative solutions to serve others. Today I lead full development at Nexium Solutions and create unique digital experiences at Zevetix."}
                     </p>
                   </div>
                 </div>
@@ -572,8 +575,8 @@ export default function HomePage() {
                         </h3>
                         <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                           {language === "es"
-                            ? "2020 - El comienzo de mi viaje en el desarrollo web. Desde mi primera línea de código hasta proyectos profesionales."
-                            : "2020 - The beginning of my journey in web development. From my first line of code to professional projects."}
+                            ? "2020 - 2022. Explora los proyectos que fueron los primeros pasos que di en el desarrollo web. Si bien son mejorables, me gusta siempre tenerlos a mano para recordar cómo empecé y todo lo que aprendí en el camino."
+                            : "2020 - 2022. Explore the projects that were my first steps in web development. While they can be improved, I like to always have them on hand to remember how I started and everything I learned along the way."}
                         </p>
                       </div>
                       <DialogTrigger asChild>
@@ -733,8 +736,8 @@ export default function HomePage() {
                       </h2>
                       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
                         {language === "es"
-                          ? "Envíame un mensaje y hablemos sobre tu próximo proyecto. Estoy disponible para colaboraciones y nuevos desafíos."
-                          : "Send me a message and let's talk about your next project. I'm available for collaborations and new challenges."}
+                          ? "Envíame un mensaje y hablemos sobre tu propuesta. Estoy disponible para colaboraciones y nuevos desafíos."
+                          : "Send me a message and let's talk about your proposal. I'm available for collaborations and new challenges."}
                       </p>
 
                       <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
@@ -766,7 +769,7 @@ export default function HomePage() {
                           </div>
                           <div>
                             <div className="text-xs sm:text-sm font-medium text-foreground">Email</div>
-                            <div className="text-xs sm:text-sm text-muted-foreground">tomasnadal@zevetix.com</div>
+                            <div className="text-xs sm:text-sm text-muted-foreground">tomasnadal04@gmail.com</div>
                           </div>
                         </div>
                       </div>

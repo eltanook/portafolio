@@ -42,12 +42,10 @@ export default function BlogPage() {
         }
         
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/blog?populate=*&sort[0]=date:desc`,
+          `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/blogs?populate=*&sort[0]=date:desc`,
           { headers }
         )
         const data = await response.json()
-        
-        console.log('✅ Strapi Response (Blog):', data)
         
         const posts: BlogPost[] = data.data?.map((item: any) => {
           const imageUrl = item.attributes.image?.data?.attributes?.url
