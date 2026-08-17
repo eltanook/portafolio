@@ -1,48 +1,42 @@
 # TOMÁS IGNACIO NADAL
-
-<div class="contact-info">
-CABA, Argentina | tomasnadal04@gmail.com | <a href="https://linkedin.com/in/tomasnadal" target="_blank">linkedin.com/in/tomasnadal</a> | <a href="https://github.com/tominadal" target="_blank">github.com/tominadal</a> | <a href="https://tomasnadal.com.ar" target="_blank">tomasnadal.com.ar</a>
-</div>
+CABA, Argentina | Email: tomasnadal04@gmail.com | LinkedIn: linkedin.com/in/tomasnadal | GitHub: github.com/tominadal | Web: tomasnadal.com.ar
 
 ## PROFESSIONAL SUMMARY
-
-Founder of Zevetix Labs and B.S. in Data Science candidate (UNSAM, 3rd year). I combine a rigorous statistical and mathematical foundation with real-world product delivery experience: led 100+ projects at Nexium Solutions and currently direct a consulting firm with 40+ active clients. Specialized in transforming data into decisions — from statistical analysis and machine learning, to deploying LLMs into live operational workflows. Core stack: Python, Pandas, SQL, R, AI API integration (OpenAI, Anthropic).
-
-## EDUCATION
-
-### **B.S. in Data Science** — *Universidad de San Martín (UNSAM)* <span class="date">2023 – Present</span>
-*Buenos Aires, Argentina (Currently in 3rd year)*
-- Applied probabilistic statistics, linear algebra, and calculus to real-world datasets, building predictive models and conducting hypothesis validation using Python and R.
-- Scientific programming for data analysis using Pandas, NumPy, Matplotlib/Seaborn, and Scikit-learn for preprocessing, visualization, and Machine Learning modeling.
-- Developed scientific rigor for hypothesis validation, A/B Testing, and empirical data-driven decision-making.
+Advanced Data Science student (UNSAM, progressing to 4th year) and Founder of Zevetix Labs. I possess a solid academic foundation in inferential statistics, linear algebra, and machine learning. I complement my mathematical rigor with years of practice in the private sector, leading development teams (Nexium) and building backend and AI solutions from scratch for over 30 clients (Zevetix). I design relational database models, integrate artificial intelligence APIs in production, and possess analytical skills ready to be commercialized.
 
 ## WORK EXPERIENCE
 
-### **Founder & AI/Data Consultant** — *Zevetix Labs* <span class="date">2024 – Present</span>
-*Buenos Aires, Argentina (Remote)*
-- Founded and scaled a technology consulting firm with **40+ active clients**, designing data-driven and AI-powered solutions that reduce operational costs and optimize processes.
-- Deployed LLM-based agents and automated workflows (OpenAI, Anthropic) via Prompt Engineering and REST API integration, reducing client operational time in targeted processes.
-- Conducted Product Discovery, translating complex business requirements into measurable technical solutions — managing stakeholder relationships and tracking performance via defined KPIs.
-- Designed basic data pipelines and analytics integrations for e-commerce and digital platforms, incorporating behavioral analytics and business metrics.
+### Founder & Data/AI Consultant - Zevetix Labs
+Buenos Aires, Argentina (Remote) | 2025 – Present
+- Built a portfolio of +30 clients, being the sole technical person in charge of designing, structuring, and developing data-oriented automations and solutions.
+- Integrate foundational model APIs (OpenAI, Anthropic, Gemini) into operational pipelines, with additional knowledge in deploying local models using Ollama.
+- My main focus is the commercial use of pre-trained AI APIs, along with specific personal experience deploying ML models in production.
 
-### **Co-Founder & Chief Technology Officer** — *Nexium Solutions* <span class="date">2022 – 2026</span>
-*Buenos Aires, Argentina (Remote)*
-- Led the delivery of **100+ digital projects**, coordinating multidisciplinary teams with Scrum and **reducing delivery times by 30%**.
-- Designed scalable architectures (Next.js, React, Node.js, Firebase) that serve as the foundation for integrating data analytics pipelines in e-commerce and B2B platforms.
-- Managed the full product lifecycle, prioritizing the backlog based on business growth metrics and client-defined KPIs.
+### Co-Founder & CTO - Nexium Solutions
+Buenos Aires, Argentina (Remote) | 2022 – 2026
+- Led teams of programmers under Kanban methodologies (Notion/Trello) to deliver +50 web projects, delegating tasks and ensuring high-quality developments.
+- Designed the foundations of backend architectures (Node.js, Relational and NoSQL Databases), ensuring the persistence and efficient storage via SQL of transactional and user behavior data.
 
-### **Software Developer (Freelance)** <span class="date">2020 – 2022</span>
-*Buenos Aires, Argentina (Remote)*
-- Built robust, performance-oriented systems in HTML5, CSS3, JavaScript, and React, achieving **Lighthouse scores ≥ 90** — skills that now enable me to deploy analytical models in real production environments.
+### Software Developer (Freelance)
+Buenos Aires, Argentina (Remote) | 2020 – 2022
+- Developed +10 interactive interfaces (HTML/CSS/JS), laying the foundation of my technological career prior to entering university.
+
+## ACADEMIC BACKGROUND
+
+### Bachelor's in Data Science - Universidad de San Martín (UNSAM)
+Buenos Aires, Argentina | 2023 – Present (Currently finishing 3rd year / starting 4th year)
+- Mathematics and Statistics: Completed Linear Algebra, Mathematical Analysis, Probability, and Inferential Statistics. Foundation for model formulation and empirical validation.
+- Computer Science: Introduction to Programming, Algorithms and Data Structures, Databases, providing me with solid logical foundations and computational efficiency.
+- Data Science & Machine Learning: Data processing (Python, Pandas, NumPy) and exploratory visualization. Classical Machine Learning (Scikit-learn): regressions, classification, and clustering. Applied knowledge in Business Intelligence tools (PowerBI/Tableau).
 
 ## TECHNICAL SKILLS
-
-- **Data Science & AI:** Python, Pandas, NumPy, Scikit-learn, Matplotlib/Seaborn, SQL, R, Applied Statistics, Machine Learning, LLM Integration (Prompt Engineering, OpenAI API, Anthropic API).
-- **Development & Deployment:** Next.js, React, Node.js, JavaScript, TypeScript, Firebase, Git / GitHub, Vercel.
-- **Management & Product:** Team Leadership, Scrum, Stakeholder Management, KPI Tracking, Product Discovery, Strategic Vision.
-- **Languages:** Spanish (Native) | English (Advanced — Cambridge CAE C1 / FCE B2).
+- Data & Back-End: Python, Pandas, NumPy, Scikit-learn, SQL, PostgreSQL, MySQL, Node.js.
+- Analysis & BI: Inferential Statistics, Classical Machine Learning, Knowledge of PowerBI/Tableau and Matplotlib/Seaborn.
+- Artificial Intelligence: Commercial API Integration (OpenAI, Anthropic, Gemini), Prompt Engineering, experimentation with Ollama and a custom model in production.
+- Methodologies: Kanban (Trello/Notion), Technical Leadership, Product Discovery.
+- Languages: Spanish (Native) | English (Advanced — Cambridge CAE C1).
 
 ## CERTIFICATIONS
-
-- **Python (Front-end / Back-end)** — *Codo a Codo (Ministry of Education)* <span class="date">Certification</span>
-- **React JS (Top 10)** — *Coderhouse* <span class="date">Certification</span>
+- Python (Front-end / Back-end) - Codo a Codo (Ministry of Education)
+- React JS (Top 10) - Coderhouse
+- Web Development 2 and 1 (Intensive) - Aprende Programando (Ministry of Education)

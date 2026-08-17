@@ -1,51 +1,42 @@
 # TOMÁS IGNACIO NADAL
-
-<div class="contact-info">
-CABA, Argentina | tomasnadal04@gmail.com | <a href="https://linkedin.com/in/tomasnadal" target="_blank">linkedin.com/in/tomasnadal</a> | <a href="https://github.com/tominadal" target="_blank">github.com/tominadal</a> | <a href="https://tomasnadal.vercel.app" target="_blank">tomasnadal.vercel.app</a>
-</div>
+CABA, Argentina | Correo: tomasnadal04@gmail.com | LinkedIn: linkedin.com/in/tomasnadal | GitHub: github.com/tominadal | Web: tomasnadal.com.ar
 
 ## RESUMEN PROFESIONAL
-
-Fundador de Zevetix Labs y estudiante avanzado de la Licenciatura en Ciencia de Datos (UNSAM, 3er año). Combino una sólida base estadística y matemática con experiencia real en la entrega de productos digitales: desarrollé más de 50 productos en Nexium Solutions y hoy dirijo una consultora con más de 40 clientes activos. Transformo datos en decisiones: desde análisis estadístico y machine learning, hasta la integración de LLMs (locales y de nube) en flujos operativos reales. Stack principal: Python, Pandas, SQL, R, integración de APIs de IA (OpenAI, Anthropic, Gemini, Ollama).
-
-## FORMACIÓN ACADÉMICA
-
-### **Licenciatura en Ciencia de Datos** — *Universidad de San Martín (UNSAM)* <span class="date">2023 – Actualidad</span>
-*Buenos Aires, Argentina (Cursando el 3er año - ciclo avanzado)*
-- Plan de estudios que incluye Análisis Matemático, Álgebra Lineal, Algoritmos, Probabilidad y Estadística, Machine Learning y Bases de Datos.
-- Apliqué métodos de estadística probabilística, álgebra lineal y cálculo en trabajos prácticos con datasets reales, desarrollando modelos predictivos y validación de hipótesis con Python y R.
-- Programación científica orientada al análisis de datos con Pandas, NumPy, Matplotlib/Seaborn y Scikit-learn para preprocesamiento, visualización y modelado.
-- Adquirí rigor científico para la validación de hipótesis, A/B Testing conceptual y toma de decisiones basada en datos empíricos.
+Estudiante avanzado de Licenciatura en Ciencia de Datos (UNSAM, transitando a 4to año) y Fundador de Zevetix Labs. Poseo una sólida base académica en estadística inferencial, álgebra lineal y aprendizaje automático. Complemento mi rigor matemático con años de práctica en el sector privado, liderando equipos de desarrollo (Nexium) y construyendo soluciones backend y de IA desde cero para más de 30 clientes (Zevetix). Diseño modelos de bases de datos relacionales, integro APIs de inteligencia artificial en producción y poseo conocimientos analíticos listos para comercializar.
 
 ## EXPERIENCIA LABORAL
 
-### **Fundador & Consultor de IA y Datos** — [*Zevetix Labs*](https://zevetix.online) <span class="date">2024 – Actualidad</span>
-*CABA, Argentina (Remoto)*
-- Fundé y escalo una consultora de tecnología con **40+ clientes activos**, donde diseño soluciones basadas en análisis de datos e inteligencia artificial para optimizar procesos operativos y reducir costos.
-- Implementé agentes y flujos automatizados basados en LLMs (OpenAI, Anthropic, Gemini, Ollama) mediante Prompt Engineering e integración de APIs REST, reduciendo tiempos operativos de clientes en procesos específicos.
-- Realizo Product Discovery y traduzco requerimientos de negocio en soluciones técnicas con impacto medible, ejerciendo liderazgo técnico y gestión de stakeholders con KPIs definidos.
-- Diseño arquitecturas de datos y pipelines básicos para clientes de e-commerce y plataformas digitales, integrando analítica de comportamiento y métricas de negocio.
+### Fundador & Consultor de IA y Datos - Zevetix Labs
+Buenos Aires, Argentina (Remoto) | 2025 – Actualidad
+- Conformé un portafolio de +30 clientes, siendo el único encargado técnico de diseñar, estructurar y desarrollar automatizaciones y soluciones orientadas a datos.
+- Integro APIs de modelos fundacionales (OpenAI, Anthropic, Gemini) en pipelines operativos, con conocimientos adicionales en el despliegue de modelos locales usando Ollama.
+- Mi enfoque principal está en el uso comercial de APIs de IA pre-entrenadas, sumado a una experiencia puntual propia disponibilizando modelos de ML en producción.
 
-### **Co-Fundador & Director de Tecnología** — *Nexium Solutions* <span class="date">2022 – 2026</span>
-*CABA, Argentina (Remoto)*
-- Lideré y desarrollé más de 70 proyectos digitales, coordinando equipos de desarrollo e implementando soluciones innovadoras y eficientes.
-- Diseñé arquitecturas escalables (Next.js, React, Node.js, Firebase) que sientan las bases para integrar canales de analítica de datos en plataformas de e-commerce y B2B.
-- Supervisé el ciclo de vida completo de productos que están actualmente en producción, priorizando el backlog en base a métricas de crecimiento de negocio y KPIs acordados con cada cliente.
+### Co-Fundador & Director de Tecnología - Nexium Solutions
+Buenos Aires, Argentina (Remoto) | 2022 – 2026
+- Lideré equipos de programadores bajo metodologías Kanban (Notion/Trello) para entregar +50 proyectos web, delegando tareas y asegurando desarrollos de alta calidad.
+- Diseñé las bases de las arquitecturas backend (Node.js, Bases de Datos Relacionales y NoSQL), garantizando la persistencia y almacenamiento eficiente mediante SQL de los datos transaccionales y de comportamiento de usuario.
 
-### **Desarrollador de Software (Freelance)** <span class="date">2020 – 2022</span>
-*CABA, Argentina (Remoto)*
-- Desarrollé sistemas robustos y orientados a performance en HTML5, CSS3, JavaScript y React, con puntuaciones **Lighthouse ≥ 90**, habilidades que hoy me permiten desplegar modelos analíticos en entornos de producción reales.
+### Desarrollador de Software (Freelance)
+Buenos Aires, Argentina (Remoto) | 2020 – 2022
+- Desarrollé +10 interfaces interactivas (HTML/CSS/JS), sentando las bases de mi carrera tecnológica previo a mi ingreso a la universidad.
+
+## FORMACIÓN ACADÉMICA
+
+### Licenciatura en Ciencia de Datos - Universidad de San Martín (UNSAM)
+Buenos Aires, Argentina | 2023 – Actualidad (Cursando finales de 3er año / inicios de 4to año)
+- Matemática y Estadística: Cursada completa de Álgebra Lineal, Análisis Matemático, Probabilidad y Estadística Inferencial. Bases para la formulación de modelos y validación empírica.
+- Ciencias de la Computación: Introducción a la Programación, Algoritmos y Estructuras de Datos, Bases de Datos, dotándome de sólidas bases lógicas y eficiencia computacional.
+- Ciencia de Datos & Machine Learning: Procesamiento de datos (Python, Pandas, NumPy) y visualización exploratoria. Aprendizaje Automático Clásico (Scikit-learn): regresiones, clasificación y clustering. Conocimientos aplicados en herramientas de Business Intelligence (PowerBI/Tableau).
 
 ## HABILIDADES TÉCNICAS
-
-- **Ciencia de Datos & IA:** Python, Pandas, NumPy, Scikit-learn, Matplotlib/Seaborn, SQL, R, Estadística Aplicada, Machine Learning, Integración de LLMs (Prompt Engineering, OpenAI API, Anthropic API, Gemini, Ollama).
-- **Desarrollo & Despliegue:** Next.js, React, Node.js, JavaScript, TypeScript, Firebase, Git / GitHub, Vercel.
-- **Gestión & Producto:** Liderazgo, Gestión de Stakeholders, KPI Tracking, Product Discovery, Visión Estratégica.
-- **Idiomas:** Español (Nativo) | Inglés (Avanzado — Cambridge CAE C1 / FCE B2).
+- Datos & Back-End: Python, Pandas, NumPy, Scikit-learn, SQL, PostgreSQL, MySQL, Node.js.
+- Análisis & BI: Estadística Inferencial, Machine Learning Clásico, Conocimientos de PowerBI/Tableau y Matplotlib/Seaborn.
+- Inteligencia Artificial: Integración de APIs comerciales (OpenAI, Anthropic, Gemini), Prompt Engineering, experimentación con Ollama y un modelo propio en producción.
+- Metodologías: Kanban (Trello/Notion), Liderazgo Técnico, Product Discovery.
+- Idiomas: Español (Nativo) | Inglés (Avanzado — Cambridge CAE C1).
 
 ## CERTIFICACIONES
-
-- **React JS (Top 10)** — *Coderhouse* <span class="date">Certificación</span>
-- **Python (Front-end / Back-end)** — *Codo a Codo (Ministerio de Educación)* <span class="date">Certificación</span>
-- **Desarrollo Web 2 (Intensivo)** — *Aprende Programando (Ministerio de Educación)* <span class="date">Certificación</span>
-- **Desarrollo Web 1 (Intensivo)** — *Aprende Programando (Ministerio de Educación)* <span class="date">Certificación</span>
+- Python (Front-end / Back-end) - Codo a Codo (Ministerio de Educación)
+- React JS (Top 10) - Coderhouse
+- Desarrollo Web 2 y 1 (Intensivo) - Aprende Programando (Ministerio de Educación)

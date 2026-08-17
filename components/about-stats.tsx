@@ -205,17 +205,17 @@ export default function AboutStats() {
                 <FaLinkedin className="w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
               </a>
               <a 
-                href={language === "es" ? "/cv.pdf" : "/cv-en.pdf"} 
+                href={language === "es" ? "/api/cv/cv-general" : "/api/cv/cv-general-en"} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-muted flex items-center justify-center text-foreground hover:text-accent transition-all duration-500 group shrink-0"
-                aria-label="CV Software Engineering"
-                title={t("approach.cvWeb") || "CV Software Engineering"}
+                aria-label="CV General"
+                title={t("approach.cvGeneral") || "CV General"}
               >
                 <FileCode className="w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
               </a>
               <a 
-                href={language === "es" ? "/cv-data.pdf" : "/cv-data-en.pdf"} 
+                href={language === "es" ? "/api/cv/cv-data" : "/api/cv/cv-data-en"} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-muted flex items-center justify-center text-foreground hover:text-accent transition-all duration-500 group shrink-0"

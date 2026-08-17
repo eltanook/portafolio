@@ -9,7 +9,7 @@ export default function ApproachAccordion() {
   const { t, language } = useLanguage()
   const [activeIndex, setActiveIndex] = useState(0)
   const [isCvOpen, setIsCvOpen] = useState(false)
-  const [activeCvType, setActiveCvType] = useState<"web" | "data" | "general">("web")
+  const [activeCvType, setActiveCvType] = useState<"general" | "data">("general")
 
   const accordionData = [
     {
@@ -45,15 +45,13 @@ export default function ApproachAccordion() {
   ]
 
   const getSlug = () => {
-    if (activeCvType === "web") return language === "es" ? "cv" : "cv-en"
     if (activeCvType === "data") return language === "es" ? "cv-data" : "cv-data-en"
     return language === "es" ? "cv-general" : "cv-general-en"
   }
 
   const getCvTitle = () => {
-    if (activeCvType === "web") return t("approach.cvWeb")
     if (activeCvType === "data") return t("approach.cvData")
-    return t("approach.cvGeneral")
+    return t("approach.cvGeneral") || "CV General"
   }
 
   return (
@@ -121,10 +119,10 @@ export default function ApproachAccordion() {
               {/* Desktop hover overlay — 3 buttons */}
               <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-3 max-md:hidden">
                 <button 
-                  onClick={(e) => { e.stopPropagation(); setActiveCvType("web"); setIsCvOpen(true); }}
+                  onClick={(e) => { e.stopPropagation(); setActiveCvType("general"); setIsCvOpen(true); }}
                   className="bg-white text-black hover:bg-accent hover:text-white px-6 py-3 rounded-full font-bold shadow-xl translate-y-4 group-hover:translate-y-0 transition-all duration-300 w-56 text-center text-sm"
                 >
-                  {t("approach.cvWeb") || "CV Software Eng."}
+                  {t("approach.cvGeneral") || "CV General"}
                 </button>
                 <button 
                   onClick={(e) => { e.stopPropagation(); setActiveCvType("data"); setIsCvOpen(true); }}
@@ -140,11 +138,11 @@ export default function ApproachAccordion() {
               {/* Mobile only CV Buttons inside image */}
               <div className="absolute bottom-4 right-4 z-10 md:hidden flex flex-col gap-2 items-end">
                 <button 
-                  onClick={(e) => { e.stopPropagation(); setActiveCvType("web"); setIsCvOpen(true); }}
+                  onClick={(e) => { e.stopPropagation(); setActiveCvType("general"); setIsCvOpen(true); }}
                   className="inline-flex w-fit items-center group transition-all hover:scale-[1.02] bg-foreground text-background rounded-full shadow-xl"
                 >
                   <div className="px-4 h-10 flex items-center justify-center font-bold text-xs whitespace-nowrap">
-                    {t("approach.cvWeb") || "CV Software Eng."}
+                    {t("approach.cvGeneral") || "CV General"}
                   </div>
                   <div className="pr-1.5 pl-1 h-10 flex items-center justify-center">
                     <div className="bg-accent text-white w-7 h-7 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
