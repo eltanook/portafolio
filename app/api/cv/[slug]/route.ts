@@ -35,10 +35,10 @@ export async function GET(
   const htmlBody = convertMarkdownToHtml(markdown)
 
   const lang = slug.endsWith("-en") ? "en" : "es"
-  const title =
-    lang === "en"
-      ? "Tomás Ignacio Nadal — Resume"
-      : "Tomás Ignacio Nadal — CV"
+  const isData = slug.includes("data")
+  const title = lang === "en"
+    ? `Tomás Ignacio Nadal — ${isData ? "Data Scientist" : "Software Engineer"} Resume`
+    : `Tomás Ignacio Nadal — CV ${isData ? "Data Scientist" : "Full Stack"}`
 
   const html = buildHtmlPage(htmlBody, title, lang)
 

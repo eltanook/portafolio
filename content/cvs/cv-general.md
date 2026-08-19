@@ -2,13 +2,13 @@
 CABA, Argentina | Tel: +54 9 11 3647-4934 | Correo: tomasnadal04@gmail.com | LinkedIn: linkedin.com/in/tomasnadal | GitHub: github.com/tominadal | Web: tomasnadal.com.ar
 
 ## RESUMEN PROFESIONAL
-Fundador, Desarrollador Full-Stack y Científico de Datos en formación (transitando hacia 4to año en UNSAM) con más de 5 años de experiencia. Fundé Zevetix Labs (portafolio de +30 clientes) y co-fundé Nexium Solutions (+50 proyectos). Combino el desarrollo backend sólido (Node.js, Bases de Datos Relacionales) y frontend (React/JS/TS) con automatización IA (APIs pre-entrenadas). Cuento con experiencia tanto desarrollando soluciones complejas en solitario, como liderando equipos de programadores bajo metodologías Kanban. Abierto a escuchar nuevas oportunidades para roles de Software Engineer, AI Developer, Tech Lead o Analista de Datos.
+Fundador, Desarrollador Full-Stack y Científico de Datos en formación (transitando hacia 4to año en UNSAM) con más de 5 años de experiencia. Fundé Zevetix Labs (portafolio de +20 proyectos) y co-fundé Nexium Solutions (+50 proyectos). Combino el desarrollo backend sólido (Node.js, Bases de Datos Relacionales) y frontend (React/JS/TS) con automatización IA (APIs pre-entrenadas). Cuento con experiencia tanto desarrollando soluciones complejas en solitario, como liderando equipos de programadores bajo metodologías Kanban. Abierto a escuchar nuevas oportunidades para roles de Software Engineer, AI Developer, Tech Lead o Analista de Datos.
 
 ## EXPERIENCIA LABORAL
 
 ### Fundador & Desarrollador Principal - Zevetix Labs
 Buenos Aires, Argentina (Remoto) | 2025 – Actualidad
-- Fundé una consultora tecnológica con la que he atendido a más de 30 clientes, desarrollando personalmente todas las soluciones full-stack y automatizaciones con IA.
+- Fundé una consultora tecnológica con la que he desarrollado más de 20 proyectos, construyendo personalmente todas las soluciones full-stack y automatizaciones con IA.
 - Implementé agentes y flujos operativos consumiendo APIs de IA (OpenAI, Anthropic, Gemini) e incorporé ocasionalmente modelos locales (Ollama) para flujos específicos.
 - Abarco el ciclo técnico completo: levantamiento de requerimientos, diseño de arquitecturas cloud/BaaS (Firebase, Vercel), diseño de bases de datos (SQL/NoSQL) y deployment final.
 

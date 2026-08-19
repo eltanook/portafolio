@@ -2,13 +2,13 @@
 CABA, Argentina | Phone: +54 9 11 3647-4934 | Email: tomasnadal04@gmail.com | LinkedIn: linkedin.com/in/tomasnadal | GitHub: github.com/tominadal | Web: tomasnadal.com.ar
 
 ## PROFESSIONAL SUMMARY
-Founder, Full-Stack Developer, and Data Scientist in training (progressing to 4th year at UNSAM) with over 5 years of experience. Founded Zevetix Labs (portfolio of +30 clients) and co-founded Nexium Solutions (+50 projects). I combine solid backend development (Node.js, Relational Databases) and frontend (React/JS/TS) with AI automation (pre-trained APIs). Experienced both in developing complex solutions solo and leading teams of programmers under Kanban methodologies. Open to new opportunities for Software Engineer, AI Developer, Tech Lead, or Data Analyst roles.
+Founder, Full-Stack Developer, and Data Scientist in training (progressing to 4th year at UNSAM) with over 5 years of experience. Founded Zevetix Labs (portfolio of +20 projects) and co-founded Nexium Solutions (+50 projects). I combine solid backend development (Node.js, Relational Databases) and frontend (React/JS/TS) with AI automation (pre-trained APIs). Experienced both in developing complex solutions solo and leading teams of programmers under Kanban methodologies. Open to new opportunities for Software Engineer, AI Developer, Tech Lead, or Data Analyst roles.
 
 ## WORK EXPERIENCE
 
 ### Founder & Lead Developer - Zevetix Labs
 Buenos Aires, Argentina (Remote) | 2025 – Present
-- Founded a technology consulting firm serving over 30 clients, personally developing all full-stack solutions and AI automations.
+- Founded a technology consulting firm delivering over 20 projects, personally developing all full-stack solutions and AI automations.
 - Implemented agents and operational workflows consuming AI APIs (OpenAI, Anthropic, Gemini) and occasionally incorporated local models (Ollama) for specific flows.
 - Cover the entire technical cycle: requirements gathering, cloud/BaaS architecture design (Firebase, Vercel), database design (SQL/NoSQL), and final deployment.
 
