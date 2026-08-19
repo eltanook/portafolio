@@ -45,7 +45,23 @@ export default function CvModal({ isOpen, onClose, cvSlug, title }: CvModalProps
   const handlePrint = () => {
     const iframe = iframeRef.current
     if (iframe?.contentWindow) {
+      const originalTitle = document.title
+      let pdfTitle = title ? `Tomás Ignacio Nadal — ${title}` : "Tomás Ignacio Nadal — CV"
+      
+      try {
+        if (iframe.contentDocument?.title) {
+          pdfTitle = iframe.contentDocument.title
+        }
+      } catch (e) {
+        // Ignore errors
+      }
+
+      document.title = pdfTitle
       iframe.contentWindow.print()
+      
+      setTimeout(() => {
+        document.title = originalTitle
+      }, 1000)
     } else {
       // Fallback: open in new tab
       window.open(cvUrl, "_blank")
