@@ -1,5 +1,5 @@
 # TOMÁS IGNACIO NADAL
-CABA, Argentina | Email: tomasnadal04@gmail.com | LinkedIn: linkedin.com/in/tomasnadal | GitHub: github.com/tominadal | Web: tomasnadal.com.ar
+CABA, Argentina | Phone: +54 9 11 3647-4934 | Email: tomasnadal04@gmail.com | LinkedIn: linkedin.com/in/tomasnadal | GitHub: github.com/tominadal | Web: tomasnadal.com.ar
 
 ## PROFESSIONAL SUMMARY
 Founder, Full-Stack Developer, and Data Scientist in training (progressing to 4th year at UNSAM) with over 5 years of experience. Founded Zevetix Labs (portfolio of +30 clients) and co-founded Nexium Solutions (+50 projects). I combine solid backend development (Node.js, Relational Databases) and frontend (React/JS/TS) with AI automation (pre-trained APIs). Experienced both in developing complex solutions solo and leading teams of programmers under Kanban methodologies. Open to new opportunities for Software Engineer, AI Developer, Tech Lead, or Data Analyst roles.

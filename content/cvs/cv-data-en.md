@@ -1,5 +1,5 @@
 # TOMÁS IGNACIO NADAL
-CABA, Argentina | Email: tomasnadal04@gmail.com | LinkedIn: linkedin.com/in/tomasnadal | GitHub: github.com/tominadal | Web: tomasnadal.com.ar
+CABA, Argentina | Phone: +54 9 11 3647-4934 | Email: tomasnadal04@gmail.com | LinkedIn: linkedin.com/in/tomasnadal | GitHub: github.com/tominadal | Web: tomasnadal.com.ar
 
 ## PROFESSIONAL SUMMARY
 Advanced Data Science student (UNSAM, progressing to 4th year) and Founder of Zevetix Labs. I possess a solid academic foundation in inferential statistics, linear algebra, and machine learning. I complement my mathematical rigor with years of practice in the private sector, leading development teams (Nexium) and building backend and AI solutions from scratch for over 30 clients (Zevetix). I design relational database models, integrate artificial intelligence APIs in production, and possess analytical skills ready to be commercialized.
