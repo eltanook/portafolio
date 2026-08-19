@@ -39,7 +39,14 @@ export default function ProjectsPage() {
   const [sortBy, setSortBy] = useState("recent")
   const [currentPage, setCurrentPage] = useState(1)
   const [viewMode, setViewMode] = useState<"list" | "grid">("list")
+  const [isMobile, setIsMobile] = useState(false)
 
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const itemsPerPage = viewMode === "grid" ? GRID_ITEMS_PER_PAGE : LIST_ITEMS_PER_PAGE
 
@@ -109,21 +116,27 @@ export default function ProjectsPage() {
   const paginatedProjects = filteredProjects.slice(startIndex, startIndex + itemsPerPage)
 
   const getPaginationItems = (): (number | "...")[] => {
-    // No ellipsis needed when 6 pages or fewer
-    if (totalPages <= 6) {
+    const maxPages = isMobile ? 3 : 6;
+    if (totalPages <= maxPages) {
       return Array.from({ length: totalPages }, (_, i) => i + 1)
     }
-    // Smart ellipsis: always show first & last, then a window around current
     const pages: (number | "...")[] = []
-    if (currentPage <= 3) {
-      // Near start: show 1 2 3 4 ... last
-      pages.push(1, 2, 3, 4, "...", totalPages)
-    } else if (currentPage >= totalPages - 2) {
-      // Near end: show 1 ... last-3 last-2 last-1 last
-      pages.push(1, "...", totalPages - 3, totalPages - 2, totalPages - 1, totalPages)
+    if (isMobile) {
+      if (currentPage <= 2) {
+        pages.push(1, 2, "...", totalPages)
+      } else if (currentPage >= totalPages - 1) {
+        pages.push(1, "...", totalPages - 1, totalPages)
+      } else {
+        pages.push(1, "...", currentPage, "...", totalPages)
+      }
     } else {
-      // Middle: show 1 ... prev current next ... last
-      pages.push(1, "...", currentPage - 1, currentPage, currentPage + 1, "...", totalPages)
+      if (currentPage <= 3) {
+        pages.push(1, 2, 3, 4, "...", totalPages)
+      } else if (currentPage >= totalPages - 2) {
+        pages.push(1, "...", totalPages - 3, totalPages - 2, totalPages - 1, totalPages)
+      } else {
+        pages.push(1, "...", currentPage - 1, currentPage, currentPage + 1, "...", totalPages)
+      }
     }
     return pages
   }

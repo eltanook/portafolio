@@ -66,6 +66,14 @@ export default function BlogPage() {
 
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
   const [currentPage, setCurrentPage] = useState<number>(1)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   // Treat the first post as the featured post (always static, unaffected by filter)
   const featuredPosts = posts.slice(0, 1)
@@ -87,6 +95,32 @@ export default function BlogPage() {
   const postsPerPage = 6
   const totalPages = Math.ceil(regularPosts.length / postsPerPage)
   const paginatedPosts = regularPosts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)
+
+  const getPaginationItems = (): (number | "...")[] => {
+    const maxPages = isMobile ? 3 : 6;
+    if (totalPages <= maxPages) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1)
+    }
+    const pages: (number | "...")[] = []
+    if (isMobile) {
+      if (currentPage <= 2) {
+        pages.push(1, 2, "...", totalPages)
+      } else if (currentPage >= totalPages - 1) {
+        pages.push(1, "...", totalPages - 1, totalPages)
+      } else {
+        pages.push(1, "...", currentPage, "...", totalPages)
+      }
+    } else {
+      if (currentPage <= 3) {
+        pages.push(1, 2, 3, 4, "...", totalPages)
+      } else if (currentPage >= totalPages - 2) {
+        pages.push(1, "...", totalPages - 3, totalPages - 2, totalPages - 1, totalPages)
+      } else {
+        pages.push(1, "...", currentPage - 1, currentPage, currentPage + 1, "...", totalPages)
+      }
+    }
+    return pages
+  }
 
   return (
     <main className="min-h-screen bg-background pt-32">
@@ -249,23 +283,29 @@ export default function BlogPage() {
             </div>
 
             {totalPages > 1 && (
-              <div className="flex justify-center items-center gap-2 mt-16 scroll-reveal">
-                {Array.from({ length: totalPages }).map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => {
-                      setCurrentPage(i + 1)
-                      window.scrollTo({ top: 0, behavior: 'smooth' })
-                    }}
-                    className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium transition-all ${
-                      currentPage === i + 1 
-                        ? "bg-accent text-accent-foreground" 
-                        : "bg-muted hover:bg-accent/20 text-foreground"
-                    }`}
-                  >
-                    {i + 1}
-                  </button>
-                ))}
+              <div className="flex justify-center items-center gap-2 mt-16 scroll-reveal flex-wrap">
+                {getPaginationItems().map((page, i) =>
+                  page === "..." ? (
+                    <span key={`ellipsis-${i}`} className="w-10 h-10 flex items-center justify-center text-foreground/40 font-bold select-none">
+                      …
+                    </span>
+                  ) : (
+                    <button
+                      key={page}
+                      onClick={() => {
+                        setCurrentPage(page as number)
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                      }}
+                      className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium transition-all ${
+                        currentPage === page 
+                          ? "bg-accent text-accent-foreground" 
+                          : "bg-muted hover:bg-accent/20 text-foreground"
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  )
+                )}
               </div>
             )}
           </div>

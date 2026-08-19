@@ -61,7 +61,7 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-background pt-32">
-      <div className="max-w-7xl mx-auto px-8 pb-24">
+      <div className="max-w-7xl mx-auto px-8 pb-12 md:pb-24">
         
         {/* Full-width Header */}
         <header className="mb-16 scroll-reveal">
@@ -236,9 +236,11 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Map */}
-        <div className="relative h-96 w-full rounded-[3rem] overflow-hidden scroll-reveal border border-border/10">
+      {/* Map */}
+      <div className="relative h-[500px] w-full md:max-w-7xl md:mx-auto md:px-8 md:pb-24 scroll-reveal max-md:-mb-8">
+        <div className="relative w-full h-full md:rounded-[3rem] overflow-hidden md:border md:border-border/10">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105073.50150904932!2d-58.51520919999999!3d-34.6158037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20Argentina!5e0!3m2!1sen!2sus!4v1234567890"
             width="100%"
@@ -249,7 +251,7 @@ export default function ContactPage() {
             referrerPolicy="no-referrer-when-downgrade"
             className="absolute inset-0 grayscale dark:invert dark:hue-rotate-180 opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-1000"
           />
-          <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 bg-background/90 backdrop-blur-md px-6 py-4 rounded-2xl border border-border/50 shadow-2xl pointer-events-none">
+          <div className="absolute bottom-20 left-8 md:bottom-12 md:left-12 bg-background/90 backdrop-blur-md px-6 py-4 rounded-2xl border border-border/50 shadow-2xl pointer-events-none">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
                 <MapPin className="w-5 h-5 text-accent" />

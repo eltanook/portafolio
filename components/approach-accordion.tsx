@@ -83,7 +83,7 @@ export default function ApproachAccordion() {
                     )}
                   </button>
                   
-                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isActive ? 'max-h-64 pb-8 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isActive ? 'max-h-[1000px] pb-8 opacity-100' : 'max-h-0 opacity-0'}`}>
                     <div className="pl-16 pr-8">
                       <p className="text-muted-foreground leading-relaxed">
                         {item.content}
