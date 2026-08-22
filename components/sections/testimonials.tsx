@@ -1,6 +1,6 @@
 "use client"
 
-import { useLanguage } from "./language-provider"
+import { useLanguage } from "@/components/layout/language-provider"
 
 export default function Testimonials() {
   const { t } = useLanguage()

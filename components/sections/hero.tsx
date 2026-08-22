@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { ArrowRight, Moon, Sun, Globe } from "lucide-react"
-import { useLanguage, Language } from "./language-provider"
+import { useLanguage, Language } from "@/components/layout/language-provider"
 import { useTheme } from "next-themes"
 import { useEffect, useState, useRef } from "react"
 import { motion, useMotionValue, useSpring } from "framer-motion"
@@ -293,13 +293,13 @@ export default function Hero() {
 
       {/* Small bottom status */}
       <motion.div 
-        className="absolute bottom-8 left-8 text-white/70 text-xs z-30 flex items-center gap-4"
+        className="absolute bottom-8 left-8 text-white/90 text-sm font-medium z-30 flex items-center gap-6"
         initial={hasAnimated ? false : { opacity: 0 }}
         animate={{ opacity: loadingComplete ? 1 : 0 }}
         transition={{ duration: 1, delay: 0.2 }}
       >
-        <div className="flex items-center gap-1.5 max-md:hidden">
-          <div className="w-2 h-2 rounded-full bg-[#ff620a] animate-pulse"></div>
+        <div className="flex items-center gap-2 max-md:hidden">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#ff620a] animate-pulse"></div>
           <span>{language === "es" ? "Disponible para nuevos desafíos." : "Available for new challenges."}</span>
         </div>
         <span>* {t("hero.rights")}</span>

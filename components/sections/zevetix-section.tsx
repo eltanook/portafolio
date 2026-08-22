@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
-import { useLanguage } from "./language-provider"
+import { useLanguage } from "@/components/layout/language-provider"
 import { useEffect, useRef, useState } from "react"
 import { useTheme } from "next-themes"
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { Cpu, Palette, Zap, ArrowRight } from "lucide-react"
-import { useLanguage } from "./language-provider"
+import { useLanguage } from "@/components/layout/language-provider"
 
 export default function ExpertiseCards() {
   const { t, language } = useLanguage()

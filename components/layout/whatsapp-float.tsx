@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { FaWhatsapp } from "react-icons/fa"
-import { useLanguage } from "./language-provider"
+import { useLanguage } from "@/components/layout/language-provider"
 
 export function WhatsAppFloat() {
   const { language } = useLanguage()

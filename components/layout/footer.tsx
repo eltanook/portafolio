@@ -1,7 +1,7 @@
 "use client"
 
 import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa"
-import { useLanguage } from "./language-provider"
+import { useLanguage } from "@/components/layout/language-provider"
 import { motion } from "framer-motion"
 
 // Assuming a custom X icon or similar if needed. For now we use text "X" inside a circle

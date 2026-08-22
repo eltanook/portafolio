@@ -3,25 +3,37 @@
 import { useEffect, useState, useRef } from "react"
 import { ArrowRight, FileCode, FileBarChart } from "lucide-react"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
-import { useLanguage } from "./language-provider"
+import { useLanguage } from "@/components/layout/language-provider"
 import { client } from "@/sanity/lib/client"
 
-const technologies = [
+const softwareTech = [
+  "HTML5",
+  "CSS3",
+  "JavaScript",
+  "TypeScript",
   "React",
   "Next.js",
-  "Tailwind CSS",
-  "TypeScript",
   "Node.js",
-  "Python",
-  "R",
-  "SQL",
-  "Pandas",
-  "Machine Learning",
-  "Data Analysis",
-  "Estadística",
-  "Leadership",
-  "Product Strategy",
+  "Tailwind CSS",
+  "Express",
+  "PostgreSQL",
+  "MySQL",
   "Git"
+]
+
+const dataTech = [
+  "Python",
+  "Pandas",
+  "NumPy",
+  "Scikit-learn",
+  "SQL",
+  "Data Analysis",
+  "Machine Learning",
+  "OpenAI",
+  "Anthropic",
+  "Ollama",
+  "PowerBI",
+  "Statistics"
 ]
  
 function CountUp({ end, duration = 3500 }: { end: number; duration?: number }) {
@@ -75,7 +87,7 @@ function calculateAge(birthDate: Date): number {
  
 export default function AboutStats() {
   const { t, language } = useLanguage()
-  const [projectCount, setProjectCount] = useState(75) // Min 75 projects
+  const [projectCount, setProjectCount] = useState(70) // Min 70 projects
   const age = calculateAge(new Date(2004, 10, 17))
  
   useEffect(() => {
@@ -84,7 +96,7 @@ export default function AboutStats() {
         const slugs = await client.fetch(`*[_type == "project" && !(_id in path("drafts.**"))].slug.current`)
         if (slugs) {
           const uniqueCount = new Set(slugs.filter(Boolean)).size
-          setProjectCount(Math.max(75, uniqueCount))
+          setProjectCount(Math.max(70, uniqueCount))
         }
       } catch (error) {
         console.error("Error fetching project count:", error)
@@ -101,9 +113,9 @@ export default function AboutStats() {
           <div className="w-full">
             <h3 className="text-foreground font-bold text-3xl mb-12 scroll-reveal max-md:hidden">{t("about.tag")}</h3>
             
-            <div className="grid grid-cols-3 gap-8 scroll-reveal max-md:flex max-md:justify-start max-md:gap-10 max-md:w-full">
+            <div className="grid grid-cols-3 gap-8 scroll-reveal max-md:flex max-md:flex-wrap max-md:justify-start max-md:gap-10 max-md:w-full">
               <div className="mb-6 max-md:text-left">
-                <h2 className="text-6xl font-bold tracking-tighter whitespace-nowrap max-md:text-5xl">
+                <h2 className="text-5xl md:text-6xl font-bold tracking-tighter whitespace-nowrap max-md:text-5xl">
                   <CountUp end={5} />
                   <span className="text-accent">+</span>
                 </h2>
@@ -113,7 +125,7 @@ export default function AboutStats() {
               </div>
  
               <div className="mb-6 max-md:text-left">
-                <h2 className="text-6xl font-bold tracking-tighter whitespace-nowrap max-md:text-5xl">
+                <h2 className="text-5xl md:text-6xl font-bold tracking-tighter whitespace-nowrap max-md:text-5xl">
                   <CountUp end={projectCount} />
                   <span className="text-accent">+</span>
                 </h2>
@@ -123,7 +135,7 @@ export default function AboutStats() {
               </div>
 
               <div className="mb-6 max-md:text-left">
-                <h2 className="text-6xl font-bold tracking-tighter whitespace-nowrap max-md:text-5xl">
+                <h2 className="text-5xl md:text-6xl font-bold tracking-tighter whitespace-nowrap max-md:text-5xl">
                   <CountUp end={age} />
                 </h2>
                 <p className="text-muted-foreground text-sm font-medium mt-2">
@@ -132,17 +144,19 @@ export default function AboutStats() {
               </div>
             </div>
             
-            <div className="relative overflow-hidden mt-8 max-w-md h-8 scroll-reveal max-md:hidden">
+            <div className="relative overflow-hidden mt-8 max-w-md scroll-reveal max-md:hidden flex flex-col gap-12">
               <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10" />
               <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10" />
+              
+              {/* Software Tech Track */}
               <div 
                 className="flex w-max animate-scroll-left no-transition hover:[animation-play-state:paused]"
-                style={{ animationDuration: "25s" }}
+                style={{ animationDuration: "55s" }}
               >
                 <div className="flex gap-3 pr-3 flex-shrink-0">
-                  {technologies.map((tech, index) => (
+                  {softwareTech.map((tech, index) => (
                     <span
-                      key={`tech-1-${index}`}
+                      key={`sw-1-${index}`}
                       className="text-xs px-3 py-1 rounded-full bg-accent/10 text-accent font-medium whitespace-nowrap flex-shrink-0 border border-accent/20"
                     >
                       {tech}
@@ -150,10 +164,37 @@ export default function AboutStats() {
                   ))}
                 </div>
                 <div className="flex gap-3 pr-3 flex-shrink-0">
-                  {technologies.map((tech, index) => (
+                  {softwareTech.map((tech, index) => (
                     <span
-                      key={`tech-2-${index}`}
+                      key={`sw-2-${index}`}
                       className="text-xs px-3 py-1 rounded-full bg-accent/10 text-accent font-medium whitespace-nowrap flex-shrink-0 border border-accent/20"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Data Tech Track */}
+              <div 
+                className="flex w-max animate-scroll-right no-transition hover:[animation-play-state:paused]"
+                style={{ animationDuration: "60s" }}
+              >
+                <div className="flex gap-3 pr-3 flex-shrink-0">
+                  {dataTech.map((tech, index) => (
+                    <span
+                      key={`dt-1-${index}`}
+                      className="text-xs px-3 py-1 rounded-full bg-muted/60 text-muted-foreground font-medium whitespace-nowrap flex-shrink-0 border border-border/50"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-3 pr-3 flex-shrink-0">
+                  {dataTech.map((tech, index) => (
+                    <span
+                      key={`dt-2-${index}`}
+                      className="text-xs px-3 py-1 rounded-full bg-muted/60 text-muted-foreground font-medium whitespace-nowrap flex-shrink-0 border border-border/50"
                     >
                       {tech}
                     </span>

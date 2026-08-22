@@ -3,7 +3,7 @@
 import { X, Download, Link as LinkIcon, Check } from "lucide-react"
 import { FaWhatsapp, FaEnvelope } from "react-icons/fa"
 import { useState, useEffect, useRef } from "react"
-import { useLanguage } from "./language-provider"
+import { useLanguage } from "@/components/layout/language-provider"
 
 interface CvModalProps {
   isOpen: boolean

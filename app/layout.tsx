@@ -1,12 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Manrope, Geist_Mono } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
-import { LanguageProvider } from "@/components/language-provider"
-import Navbar from "@/components/navbar"
-import ScrollReveal from "@/components/scroll-reveal"
-import { WhatsAppFloat } from "@/components/whatsapp-float"
-import { CustomCursor } from "@/components/custom-cursor"
+import { ThemeProvider } from "@/components/ui/theme-provider"
+import { LanguageProvider } from "@/components/layout/language-provider"
+import Navbar from "@/components/layout/navbar"
+import ScrollReveal from "@/components/ui/scroll-reveal"
+import { WhatsAppFloat } from "@/components/layout/whatsapp-float"
+import { CustomCursor } from "@/components/ui/custom-cursor"
 import { Toaster } from "sonner"
 import Script from "next/script"
 import "./globals.css"
@@ -134,6 +134,11 @@ export default function RootLayout({
                 "https://www.linkedin.com/in/tomasnadal/",
                 "https://www.instagram.com/tominadal_/",
               ],
+              email: "tomasnadal04@gmail.com",
+              worksFor: {
+                "@type": "Organization",
+                "name": "Zevetix"
+              },
               knowsAbout: [
                 "React", "Next.js", "Node.js", "TypeScript", "Python",
                 "Data Science", "Web Development", "Full Stack Development",

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useLanguage } from "./language-provider"
+import { useLanguage } from "@/components/layout/language-provider"
 import { useTheme } from "next-themes"
 import { Moon, Sun, Globe, Menu, X } from "lucide-react"
 import Link from "next/link"

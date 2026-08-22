@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { ArrowRight, ExternalLink, X } from "lucide-react"
-import { useLanguage } from "./language-provider"
+import { useLanguage } from "@/components/layout/language-provider"
 import { useState, useEffect, useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 

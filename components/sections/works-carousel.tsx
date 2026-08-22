@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { useLanguage } from "./language-provider"
+import { useLanguage } from "@/components/layout/language-provider"
 import { client } from "@/sanity/lib/client"
 import { ArrowUpRight, ArrowRight, Eye } from "lucide-react"
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"

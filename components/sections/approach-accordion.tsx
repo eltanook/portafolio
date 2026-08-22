@@ -2,8 +2,8 @@
 import { useState } from "react"
 import Image from "next/image"
 import { ChevronDown, ChevronUp, ArrowRight } from "lucide-react"
-import { useLanguage } from "./language-provider"
-import CvModal from "./cv-modal"
+import { useLanguage } from "@/components/layout/language-provider"
+import CvModal from "@/components/ui/cv-modal"
 
 export default function ApproachAccordion() {
   const { t, language } = useLanguage()
@@ -41,6 +41,11 @@ export default function ApproachAccordion() {
       num: "(06)",
       title: t("app.6.title"),
       content: t("app.6.desc"),
+    },
+    {
+      num: "(07)",
+      title: t("app.7.title"),
+      content: t("app.7.desc"),
     }
   ]
 
