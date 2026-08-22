@@ -23,6 +23,7 @@ const translations = {
     "nav.testimonials": "Filosofía",
     "nav.connect": "Conectar",
     "nav.sendMessage": "Contáctame",
+    "nav.approach": "Metodología",
 
     // Hero
     "hero.title": "Tomás Nadal",
@@ -168,6 +169,7 @@ const translations = {
     "nav.testimonials": "Philosophy",
     "nav.connect": "Get Connected",
     "nav.sendMessage": "Contact Me",
+    "nav.approach": "Approach",
 
     // Hero
     "hero.title": "Tomás Nadal",

@@ -30,11 +30,11 @@ export default function Footer() {
         <div>
           <p className="text-white/50 text-sm mb-4">{t("footer.nav")}</p>
           <ul className="space-y-3 text-sm">
-            <li><a href="#" className="hover:text-accent transition-colors">{t("footer.home")}</a></li>
-            <li><a href="#about" className="hover:text-accent transition-colors">{t("nav.expertise")}</a></li>
-            <li><a href="#works" className="hover:text-accent transition-colors">{t("nav.works")}</a></li>
-            <li><a href="#expertise" className="hover:text-accent transition-colors">{t("nav.expertise")}</a></li>
-            <li><a href="#approach" className="hover:text-accent transition-colors">{t("nav.expertise")}</a></li>
+            <li><a href="#" className="hover:text-accent transition-colors">{t("nav.home")}</a></li>
+            <li><a href="#approach" className="hover:text-accent transition-colors">{t("nav.approach")}</a></li>
+            <li><a href="#works" className="hover:text-accent transition-colors">{t("nav.projects")}</a></li>
+            <li><a href="#articles" className="hover:text-accent transition-colors">{t("nav.blog")}</a></li>
+            <li><a href="#contact" className="hover:text-accent transition-colors">{t("nav.contact")}</a></li>
           </ul>
         </div>
 
