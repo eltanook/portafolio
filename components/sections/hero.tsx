@@ -278,8 +278,12 @@ export default function Hero() {
           </h2>
           {/* Asterisk base - absolute so it doesn't affect scrollWidth measurement */}
           <span
-            className="absolute top-0 left-full ml-2 text-white/20 leading-none font-bold select-none text-[1.25em]"
-            style={fontSize ? { fontSize: `calc(${fontSize} * 1.25)` } : undefined}
+            className="absolute -top-[15px] left-full ml-[28px] text-white/20 leading-none font-bold select-none text-[1.6em]"
+            style={{
+              ...(fontSize ? { fontSize: `calc(${fontSize} * 1.6)` } : {}),
+              opacity: loadingComplete ? 0 : 1,
+              transition: "opacity 0.5s ease"
+            }}
           >*</span>
           
           {/* Animated fill text */}
@@ -287,20 +291,16 @@ export default function Hero() {
             style={fontSize ? { fontSize } : undefined}
             className="absolute top-0 left-0 max-md:text-[clamp(5rem,22vw,16.1rem)] md:text-[clamp(5.5rem,24vw,16.1rem)] leading-none font-bold text-white tracking-tighter select-none whitespace-nowrap"
             initial={hasAnimated ? false : { clipPath: isMobile ? "inset(0 0 100% 0)" : "inset(0 100% 0 0)", opacity: 0 }}
-            animate={{ clipPath: "inset(0 0% 0 0)", opacity: 1 }}
+            animate={{ clipPath: isMobile ? "inset(0 0 -50% 0)" : "inset(0 -50% 0 0)", opacity: 1 }}
             transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
             onAnimationComplete={() => setLoadingComplete(true)}
           >
             Tomás Nadal
+            {/* Asterisk animated - synced perfectly with the text sweep */}
+            <span
+              className="absolute -top-[15px] left-full ml-[28px] text-accent leading-none font-bold select-none text-[1.6em]"
+            >*</span>
           </motion.h2>
-          {/* Asterisk animated - synced with the text fill animation */}
-          <motion.span
-            className="absolute top-0 left-full ml-2 text-accent leading-none font-bold select-none text-[1.25em]"
-            style={fontSize ? { fontSize: `calc(${fontSize} * 1.25)` } : undefined}
-            initial={hasAnimated ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
-          >*</motion.span>
         </div>
       </div>
 
