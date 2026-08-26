@@ -178,8 +178,8 @@ export default function CvModal({ isOpen, onClose, cvSlug, title }: CvModalProps
         >
           <iframe
             ref={iframeRef}
-            src={cvUrl}
-            className="w-full h-full border-none min-h-[50vh] sm:min-h-full"
+            src={`${cvUrl}#view=FitH`}
+            className="w-full h-full border-none min-h-[75vh] sm:min-h-full"
             title={title || "CV"}
           />
         </div>
