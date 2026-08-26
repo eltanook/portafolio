@@ -140,7 +140,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
   }
 
   return (
-    <main className="min-h-screen pt-32 bg-background">
+    <main className="min-h-screen pt-40 md:pt-48 bg-background">
       <div className="max-w-5xl mx-auto px-8 pb-24">
         <Link
           href="/projects"
@@ -235,7 +235,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
           <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-md">
             <button
               onClick={() => setIsGalleryOpen(false)}
-              className="absolute top-8 right-8 z-[110] p-4 rounded-full bg-muted/50 hover:bg-accent hover:text-white transition-colors"
+              className="absolute top-28 md:top-12 right-8 z-[110] p-4 rounded-full bg-muted/50 hover:bg-accent hover:text-white transition-colors"
             >
               <X size={24} />
             </button>

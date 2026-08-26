@@ -16,8 +16,29 @@ export default function ContactPage() {
     message: "",
   })
 
+  const validateForm = (): string | null => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (formData.name.trim().length < 2) {
+      return language === "es" ? "El nombre debe tener al menos 2 caracteres." : "Name must be at least 2 characters."
+    }
+    if (!emailRegex.test(formData.email)) {
+      return language === "es" ? "El email no es válido." : "Please enter a valid email."
+    }
+    if (formData.message.trim().length < 10) {
+      return language === "es" ? "El mensaje debe tener al menos 10 caracteres." : "Message must be at least 10 characters."
+    }
+    return null
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    const validationError = validateForm()
+    if (validationError) {
+      toast.error(validationError)
+      return
+    }
+
     setIsSubmitting(true)
 
     const form = e.target as HTMLFormElement

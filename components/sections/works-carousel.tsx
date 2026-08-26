@@ -111,19 +111,15 @@ export default function WorksCarousel() {
       // Provide a default 300vh height just in case, but use precise scrollRange when available
       style={{ height: scrollRange > 0 ? `calc(${scrollRange}px + 100vh)` : "300vh" }}
     >
-      {/* Mobile-only Sticky Grid Background */}
       <div 
         className="hidden max-md:block sticky top-0 h-screen w-full pointer-events-none z-0" 
         style={{ marginBottom: "-100vh" }}
       >
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-[10%]"
           style={{
-            backgroundImage: `
-              linear-gradient(to right, #ff620a 1px, transparent 1px),
-              linear-gradient(to bottom, #ff620a 1px, transparent 1px)
-            `,
-            backgroundSize: "80px 80px",
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Ctext x='100' y='100' font-size='280' text-anchor='middle' dominant-baseline='central' font-family='system-ui%2C-apple-system%2Csans-serif' fill='%23888888'%3E*%3C/text%3E%3C/svg%3E")`,
+            backgroundSize: "200px 200px",
           }}
         />
       </div>
@@ -132,13 +128,10 @@ export default function WorksCarousel() {
 
         {/* Desktop Grid Background */}
         <div
-          className="absolute inset-0 z-0 pointer-events-none opacity-20 max-md:hidden"
+          className="absolute inset-0 z-0 pointer-events-none opacity-[10%] max-md:hidden"
           style={{
-            backgroundImage: `
-              linear-gradient(to right, #ff620a 1px, transparent 1px),
-              linear-gradient(to bottom, #ff620a 1px, transparent 1px)
-            `,
-            backgroundSize: "80px 80px",
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Ctext x='100' y='100' font-size='280' text-anchor='middle' dominant-baseline='central' font-family='system-ui%2C-apple-system%2Csans-serif' fill='%23888888'%3E*%3C/text%3E%3C/svg%3E")`,
+            backgroundSize: "200px 200px",
           }}
         />
 
@@ -180,10 +173,10 @@ export default function WorksCarousel() {
             projects.map((project, idx) => (
               <div
                 key={`${project._id}-${idx}`}
-                className="group flex-shrink-0 w-[350px] md:w-[650px] relative scroll-reveal max-md:w-full max-md:mb-16 max-md:sticky max-md:[top:var(--stack-top)] max-md:bg-[#fafafa] dark:max-md:bg-[#0a0a0a] max-md:rounded-[3rem] max-md:shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:max-md:shadow-[0_8px_30px_rgba(255,255,255,0.02)] max-md:p-6 max-md:border max-md:border-border/10 max-md:flex max-md:flex-col"
+              className="group flex-shrink-0 w-[350px] md:w-[650px] relative scroll-reveal max-md:w-full max-md:mb-16 max-md:sticky max-md:[top:var(--stack-top)] max-md:bg-[#fafafa] dark:max-md:bg-[#0a0a0a] max-md:rounded-[2.5rem] max-md:shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:max-md:shadow-[0_8px_30px_rgba(255,255,255,0.02)] max-md:p-6 max-md:border max-md:border-accent/20 max-md:flex max-md:flex-col"
                 style={{ "--stack-top": `calc(6rem + ${idx * 1.5}rem)` } as React.CSSProperties}
               >
-                <div className="relative aspect-[16/10] md:rounded-[3rem] max-md:rounded-[1.5rem] overflow-hidden mb-10 max-md:mb-6 bg-muted/20 transition-all duration-700">
+                <div className="relative aspect-[16/10] md:rounded-[2.5rem] max-md:rounded-[1.25rem] overflow-hidden mb-10 max-md:mb-6 bg-muted/20 transition-all duration-700 border border-accent/20">
                   <Link href={`/projects/${project.slug.current}`} className="block w-full h-full">
                   {project.image ? (
                     <Image

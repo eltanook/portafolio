@@ -142,8 +142,8 @@ export default function ProjectsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-background pt-32">
-      <div className="max-w-7xl mx-auto px-8 pb-24">
+    <main className="min-h-screen bg-background pt-40 md:pt-48">
+      <div className="max-w-7xl mx-auto px-8 pb-12 md:pb-24">
         <header className="mb-16 scroll-reveal">
           <h1 className="text-[clamp(2.5rem,8vw,5.5rem)] leading-tight font-medium tracking-tight mb-6">
             {t("projects.title")}

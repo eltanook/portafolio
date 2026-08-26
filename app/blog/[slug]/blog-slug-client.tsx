@@ -133,7 +133,7 @@ export default function BlogArticlePage({ params }: { params: Promise<{ slug: st
   }
 
   return (
-    <main className="min-h-screen pt-32 bg-background">
+    <main className="min-h-screen pt-40 md:pt-48 bg-background">
       <article className="max-w-5xl mx-auto px-8 pb-24">
         {/* Back button */}
         <Link

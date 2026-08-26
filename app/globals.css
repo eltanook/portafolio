@@ -110,17 +110,7 @@
   input[type="tel"],
   input[type="url"],
   textarea {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff620a' stroke='%23000000' stroke-width='0.5' d='M8.6,18H7.9C7.7,18,7.5,17.8,7.5,17.6V7.4C7.5,7.2,7.7,7,7.9,7h0.7C8.8,7,9,7.2,9,7.4v10.2 C9,17.8,8.8,18,8.6,18z M11.1,17.6V7.4C11.1,7.2,11.3,7,11.5,7h0c0.2,0,0.4,0.2,0.4,0.4v10.2c0,0.2-0.2,0.4-0.4,0.4h0 C11.3,18,11.1,17.8,11.1,17.6z M13.5,18h-0.7c-0.2,0-0.4-0.2-0.4-0.4V7.4c0-0.2,0.2-0.4,0.4-0.4h0.7c0.2,0,0.4,0.2,0.4,0.4v10.2 C13.9,17.8,13.7,18,13.5,18z M16.1,17.6V7.4c0-0.2,0.2-0.4,0.4-0.4h0c0.2,0,0.4,0.2,0.4,0.4v10.2c0,0.2-0.2,0.4-0.4,0.4h0 C16.3,18,16.1,17.8,16.1,17.6z'/%3E%3C/svg%3E") 12 12, text !important;
-  }
-
-  .dark input[type="text"],
-  .dark input[type="email"],
-  .dark input[type="password"],
-  .dark input[type="search"],
-  .dark input[type="tel"],
-  .dark input[type="url"],
-  .dark textarea {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff620a' stroke='%23ffffff' stroke-width='0.5' d='M8.6,18H7.9C7.7,18,7.5,17.8,7.5,17.6V7.4C7.5,7.2,7.7,7,7.9,7h0.7C8.8,7,9,7.2,9,7.4v10.2 C9,17.8,8.8,18,8.6,18z M11.1,17.6V7.4C11.1,7.2,11.3,7,11.5,7h0c0.2,0,0.4,0.2,0.4,0.4v10.2c0,0.2-0.2,0.4-0.4,0.4h0 C11.3,18,11.1,17.8,11.1,17.6z M13.5,18h-0.7c-0.2,0-0.4-0.2-0.4-0.4V7.4c0-0.2,0.2-0.4,0.4-0.4h0.7c0.2,0,0.4,0.2,0.4,0.4v10.2 C13.9,17.8,13.7,18,13.5,18z M16.1,17.6V7.4c0-0.2,0.2-0.4,0.4-0.4h0c0.2,0,0.4,0.2,0.4,0.4v10.2c0,0.2-0.2,0.4-0.4,0.4h0 C16.3,18,16.1,17.8,16.1,17.6z'/%3E%3C/svg%3E") 12 12, text !important;
+    cursor: text !important;
   }
 
 
@@ -134,34 +124,34 @@
     background: hsl(var(--background));
   }
 
-  /* Light mode: dark scrollbar */
+  /* Light mode: orange scrollbar */
   ::-webkit-scrollbar-thumb {
-    background: hsl(0 0% 20%);
+    background: hsl(var(--accent));
     border-radius: 4px;
     transition: background 0.2s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--accent));
+    background: hsl(var(--accent) / 0.75);
   }
 
-  /* Dark mode: light scrollbar */
+  /* Dark mode: also orange */
   .dark ::-webkit-scrollbar-thumb {
-    background: hsl(0 0% 80%);
+    background: hsl(var(--accent));
   }
 
   .dark ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--accent));
+    background: hsl(var(--accent) / 0.75);
   }
 
   /* Firefox scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: hsl(0 0% 20%) hsl(var(--background));
+    scrollbar-color: hsl(var(--accent)) hsl(var(--background));
   }
 
   .dark * {
-    scrollbar-color: hsl(0 0% 80%) hsl(var(--background));
+    scrollbar-color: hsl(var(--accent)) hsl(var(--background));
   }
 
   /* Text selection (from V1) */

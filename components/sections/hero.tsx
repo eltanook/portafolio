@@ -85,8 +85,8 @@ export default function Hero() {
         text.style.fontSize = `${baseSize}px`
         const textWidth = text.scrollWidth
         
-        // Desktop width constraint: screen width minus padding
-        const maxAvailableWidth = window.innerWidth - 80
+        // Desktop width constraint: screen width minus padding (extra buffer for asterisk)
+        const maxAvailableWidth = window.innerWidth - 200
         
         if (textWidth > maxAvailableWidth && textWidth > 0) {
           const ratio = maxAvailableWidth / textWidth
@@ -261,9 +261,9 @@ export default function Hero() {
           visibility: isHidden ? "hidden" : "visible",
           transition: "opacity 0.25s ease, visibility 0.25s ease"
         }}
-        className="absolute max-md:top-1/2 max-md:-translate-y-1/2 max-md:right-0 max-md:[writing-mode:vertical-rl] max-md:[text-orientation:sideways] max-md:rotate-180 md:bottom-12 md:left-0 md:w-full md:flex md:items-end md:justify-start md:px-8 pointer-events-none z-20"
+        className="absolute max-md:top-1/2 max-md:-translate-y-1/2 max-md:right-0 max-md:[writing-mode:vertical-rl] max-md:[text-orientation:sideways] max-md:rotate-180 md:bottom-[45px] md:left-0 md:w-full md:flex md:items-end md:justify-start md:px-8 pointer-events-none z-20"
       >
-        <div className="relative max-md:whitespace-nowrap">
+        <div className="relative inline-block max-md:whitespace-nowrap">
           {/* Base text (low opacity) */}
           <h2 
             ref={textRef}
@@ -274,8 +274,13 @@ export default function Hero() {
             }}
             className="max-md:text-[clamp(5rem,22vw,16.1rem)] md:text-[clamp(5.5rem,24vw,16.1rem)] leading-none font-bold text-white/20 tracking-tighter select-none whitespace-nowrap"
           >
-            Tomás Nadal<span className="text-white/20 align-top ml-2">&reg;</span>
+            Tomás Nadal
           </h2>
+          {/* Asterisk base - absolute so it doesn't affect scrollWidth measurement */}
+          <span
+            className="absolute top-0 left-full ml-2 text-white/20 leading-none font-bold select-none text-[1.25em]"
+            style={fontSize ? { fontSize: `calc(${fontSize} * 1.25)` } : undefined}
+          >*</span>
           
           {/* Animated fill text */}
           <motion.h2 
@@ -286,8 +291,16 @@ export default function Hero() {
             transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
             onAnimationComplete={() => setLoadingComplete(true)}
           >
-            Tomás Nadal<span className="text-accent align-top ml-2">&reg;</span>
+            Tomás Nadal
           </motion.h2>
+          {/* Asterisk animated - synced with the text fill animation */}
+          <motion.span
+            className="absolute top-0 left-full ml-2 text-accent leading-none font-bold select-none text-[1.25em]"
+            style={fontSize ? { fontSize: `calc(${fontSize} * 1.25)` } : undefined}
+            initial={hasAnimated ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
+          >*</motion.span>
         </div>
       </div>
 
