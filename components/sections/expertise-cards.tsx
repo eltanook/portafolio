@@ -31,7 +31,7 @@ export default function ExpertiseCards() {
   ]
 
   return (
-    <section id="expertise" className="w-full bg-background px-6 md:px-12 lg:px-20 py-24 border-b border-border/10 relative">
+    <section id="expertise" className="w-full bg-background px-6 md:px-12 lg:px-20 pt-8 md:pt-24 pb-24 border-b border-border/10 relative">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto">
         {cards.map((card, idx) => (
           <div 

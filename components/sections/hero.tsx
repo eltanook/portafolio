@@ -278,7 +278,7 @@ export default function Hero() {
           </h2>
           {/* Asterisk base - absolute so it doesn't affect scrollWidth measurement */}
           <span
-            className="absolute -top-[15px] left-full ml-[28px] text-white/20 leading-none font-bold select-none text-[1.6em]"
+            className="max-md:hidden absolute -top-[15px] left-full ml-[28px] text-white/20 leading-none font-bold select-none text-[1.6em]"
             style={{
               ...(fontSize ? { fontSize: `calc(${fontSize} * 1.6)` } : {}),
               opacity: loadingComplete ? 0 : 1,
@@ -298,7 +298,7 @@ export default function Hero() {
             Tomás Nadal
             {/* Asterisk animated - synced perfectly with the text sweep */}
             <span
-              className="absolute -top-[15px] left-full ml-[28px] text-accent leading-none font-bold select-none text-[1.6em]"
+              className="max-md:hidden absolute -top-[15px] left-full ml-[28px] text-accent leading-none font-bold select-none text-[1.6em]"
             >*</span>
           </motion.h2>
         </div>
@@ -315,7 +315,7 @@ export default function Hero() {
           <div className="w-2.5 h-2.5 rounded-full bg-[#ff620a] animate-pulse"></div>
           <span>{language === "es" ? "Disponible para nuevos desafíos." : "Available for new challenges."}</span>
         </div>
-        <span>* {t("hero.rights")}</span>
+        <span><span className="text-accent text-lg max-md:text-2xl font-bold inline-block max-md:translate-y-[4px]">*</span> {t("hero.rights")}</span>
       </motion.div>
       
       <motion.div 

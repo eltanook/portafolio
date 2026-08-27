@@ -116,10 +116,11 @@ export default function WorksCarousel() {
         style={{ marginBottom: "-100vh" }}
       >
         <div
-          className="absolute inset-0 opacity-[10%]"
+          className="absolute inset-0 opacity-[7%]"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Ctext x='100' y='100' font-size='280' text-anchor='middle' dominant-baseline='central' font-family='system-ui%2C-apple-system%2Csans-serif' fill='%23888888'%3E*%3C/text%3E%3C/svg%3E")`,
-            backgroundSize: "200px 200px",
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ctext x='60' y='60' font-size='220' text-anchor='middle' dominant-baseline='central' font-family='system-ui%2C-apple-system%2Csans-serif' fill='%23888888'%3E*%3C/text%3E%3C/svg%3E")`,
+            backgroundSize: "120px 120px",
+            backgroundPosition: "-20px 0px",
           }}
         />
       </div>
@@ -128,10 +129,10 @@ export default function WorksCarousel() {
 
         {/* Desktop Grid Background */}
         <div
-          className="absolute inset-0 z-0 pointer-events-none opacity-[10%] max-md:hidden"
+          className="absolute inset-0 z-0 pointer-events-none opacity-[7%] max-md:hidden"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Ctext x='100' y='100' font-size='280' text-anchor='middle' dominant-baseline='central' font-family='system-ui%2C-apple-system%2Csans-serif' fill='%23888888'%3E*%3C/text%3E%3C/svg%3E")`,
-            backgroundSize: "200px 200px",
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Ctext x='110' y='110' font-size='400' text-anchor='middle' dominant-baseline='central' font-family='system-ui%2C-apple-system%2Csans-serif' fill='%23888888'%3E*%3C/text%3E%3C/svg%3E")`,
+            backgroundSize: "220px 220px",
           }}
         />
 
