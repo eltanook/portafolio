@@ -149,7 +149,7 @@ function buildHtmlPage(body: string, title: string, lang: string): string {
 <style>
   @page {
     size: A4;
-    margin: 0.65in 0.7in 0.65in 0.7in;
+    margin: 0.35in 0.35in;
   }
   * { box-sizing: border-box; }
   body {
@@ -253,29 +253,85 @@ function buildHtmlPage(body: string, title: string, lang: string): string {
   @media screen {
     body {
       background: #f0f0f0;
-      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+    .cv-wrapper {
+      transform-origin: top center;
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
     .cv-page {
       background: #ffffff;
-      max-width: 21cm;
-      margin: 0 auto;
-      padding: 1.65cm 1.78cm;
+      width: 210mm; /* A4 width */
+      min-height: 297mm; /* A4 height */
+      margin: 0;
+      padding: 0.89cm 0.89cm; /* 0.35in equivalent */
       box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-      border-radius: 4px;
+      box-sizing: border-box;
     }
   }
 
   /* ── Print: remove shadows ── */
   @media print {
-    body { background: #fff; padding: 0; }
-    .cv-page { box-shadow: none; padding: 0; margin: 0; border-radius: 0; max-width: none; }
+    body { background: #fff; padding: 0; margin: 0; display: block; }
+    .cv-wrapper { display: block; width: auto; transform: none !important; height: auto !important; margin: 0 !important; }
+    .cv-page { box-shadow: none; padding: 0; margin: 0; width: auto; min-height: auto; }
   }
 </style>
 </head>
 <body>
-  <div class="cv-page">
-    ${body}
+  <div class="cv-wrapper" id="cv-wrapper">
+    <div class="cv-page" id="cv-page">
+      ${body}
+    </div>
   </div>
+  <script>
+    function scalePage() {
+      const wrapper = document.getElementById('cv-wrapper');
+      const page = document.getElementById('cv-page');
+      if (!wrapper || !page) return;
+      
+      // Skip scaling when printing
+      if (window.matchMedia('print').matches) {
+        wrapper.style.transform = 'none';
+        wrapper.style.height = 'auto';
+        wrapper.style.margin = '0';
+        return;
+      }
+      
+      const screenWidth = window.innerWidth;
+      // 210mm is approx 794px at 96dpi
+      const pageWidth = page.offsetWidth || 794; 
+      
+      // The modal in the parent already has padding on mobile (p-4 = 16px).
+      // We can use 0 extra margin here on small screens to maximize space.
+      const margin = screenWidth < 850 ? 0 : 64; 
+      
+      if (screenWidth < pageWidth + margin) {
+        const scale = (screenWidth - margin) / pageWidth;
+        wrapper.style.transform = \`scale(\${scale})\`;
+        wrapper.style.height = \`\${page.offsetHeight * scale}px\`;
+        wrapper.style.marginTop = \`\${margin / 2}px\`;
+        wrapper.style.marginBottom = \`\${margin / 2}px\`;
+      } else {
+        wrapper.style.transform = 'none';
+        wrapper.style.height = 'auto';
+        wrapper.style.marginTop = '2rem';
+        wrapper.style.marginBottom = '2rem';
+      }
+    }
+
+    window.addEventListener('resize', scalePage);
+    window.addEventListener('load', scalePage);
+    
+    // Also scale when fonts are loaded
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(scalePage);
+    }
+  </script>
 </body>
 </html>`
 }
